@@ -1,0 +1,18 @@
+{
+  "full_description": "sort three difficult-to-grasp colored spool blocks into the matching shelf compartments after inspecting each grasp with the other wrist camera",
+  "schema": "{A}, {B}, and {C} identify the blocks, while {D} identifies the shelf",
+  "preference": "Mention matching each colored block to its shelf region and using the other arm to observe.",
+  "seen": [
+    "Inspect with the other arm, then sort {A}, {B}, and {C} onto {D}.",
+    "Use one wrist camera to inspect {A}, {B}, and {C}, then place them on {D}.",
+    "Observe {A}, {B}, and {C} with the other arm, then color-sort them onto {D}.",
+    "Put {A}, {B}, and {C} into their same-color compartments on {D}.",
+    "Sort {A}, {B}, and {C} on {D} after checking each grip from the side.",
+    "Use both arms to inspect {A}, {B}, and {C} and place them in matching bays on {D}."
+  ],
+  "unseen": [
+    "Match {A}, {B}, and {C} to their colored bays on {D}.",
+    "Inspect {A}, {B}, and {C}, then place them by color on {D}.",
+    "Use the spare wrist view while sorting {A}, {B}, and {C} into matching sections on {D}."
+  ]
+}
