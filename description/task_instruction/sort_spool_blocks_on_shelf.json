@@ -1,18 +1,18 @@
 {
-  "full_description": "sort three difficult-to-grasp colored spool blocks into the matching shelf compartments after inspecting each grasp with the other wrist camera",
-  "schema": "{A}, {B}, and {C} identify the blocks, while {D} identifies the shelf",
-  "preference": "Mention matching each colored block to its shelf region and using the other arm to observe.",
+  "full_description": "retrieve nine mixed-color spool blocks from the undivided lower bay of a two-level shelf, which is occluded from the head camera, and sort them into matching upper compartments using wrist-camera inspection",
+  "schema": "{A}, {B}, and {C} identify the three groups of blocks, while {D} identifies the shelf",
+  "preference": "Mention inspecting the lower bay with a wrist camera and moving every block to the same-color upper compartment.",
   "seen": [
-    "Inspect with the other arm, then sort {A}, {B}, and {C} onto {D}.",
-    "Use one wrist camera to inspect {A}, {B}, and {C}, then place them on {D}.",
-    "Observe {A}, {B}, and {C} with the other arm, then color-sort them onto {D}.",
-    "Put {A}, {B}, and {C} into their same-color compartments on {D}.",
-    "Sort {A}, {B}, and {C} on {D} after checking each grip from the side.",
-    "Use both arms to inspect {A}, {B}, and {C} and place them in matching bays on {D}."
+    "Inspect the lower bay of {D} with the other wrist camera, then move {A}, {B}, and {C} to the matching upper compartments.",
+    "Find {A}, {B}, and {C} in the lower shelf using a wrist camera and sort them by color on the upper shelf of {D}.",
+    "Use the other arm to see into the lower bay of {D}, then transfer {A}, {B}, and {C} into the same-color upper bays.",
+    "Move all of {A}, {B}, and {C} from the undivided lower bay to their matching upper compartments on {D}.",
+    "Look beneath the middle board of {D} with a wrist camera and sort {A}, {B}, and {C} onto the upper level.",
+    "Use both arms to inspect and retrieve {A}, {B}, and {C} from below, placing them by color on top in {D}."
   ],
   "unseen": [
-    "Match {A}, {B}, and {C} to their colored bays on {D}.",
-    "Inspect {A}, {B}, and {C}, then place them by color on {D}.",
-    "Use the spare wrist view while sorting {A}, {B}, and {C} into matching sections on {D}."
+    "Empty the lower bay of {D} by transferring {A}, {B}, and {C} to the color-matched upper bays.",
+    "Use a low wrist-camera view to find {A}, {B}, and {C} beneath the shelf board, then sort them upstairs on {D}.",
+    "Inspect the hidden lower shelf with the spare wrist camera and put every one of {A}, {B}, and {C} into the matching upper section of {D}."
   ]
 }

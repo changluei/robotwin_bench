@@ -47,5 +47,5 @@ stack_blocks_two: 800
 stack_bowls_three: 1200
 stack_bowls_two: 900
 stamp_seal: 400
-sort_spool_blocks_on_shelf: 1800
+sort_spool_blocks_on_shelf: 5400
 turn_switch: 400
