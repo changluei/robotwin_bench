@@ -1,0 +1,25 @@
+{
+  "source_runs": [
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_H",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_S"
+  ],
+  "source_sha256": {
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_H/execution.mp4": "9a40a16a904d24ad2b0e3c24c5fd5406a7f09aad732e1502cfd365b1306c65a9",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_S/execution.mp4": "5899c9caf0f3163b781c2ac8690d8a7ab2c5c30e6fc73830c4063ee501e38fd5"
+  },
+  "fps": 10,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "opening_seconds": 3,
+  "physical_replay_seconds": 11.0,
+  "closing_seconds": 4,
+  "physical_replay_speed": 1,
+  "source_frames": [
+    110,
+    108
+  ],
+  "shorter_clip_tail_hold_frames": 2,
+  "simulation_rerun": false
+}

@@ -1,0 +1,13 @@
+{
+  "recorded_utc": "2026-09-10T06:18:41.502094+00:00",
+  "freeze_manifest": "FROZEN.json",
+  "change_to_frozen_source": false,
+  "change_to_geometry_thresholds_policy_budget": false,
+  "initial_test_plan": "GPU 0: seeds 100..109; GPU 1: seeds 110..119",
+  "failure": "SAPIEN 3.0.0b1 legacy renderer initializes GPU 0; explicit cuda:1 RenderSystem fails before scene/instance creation",
+  "failed_cohort": "result/occluded_socket_drawer/test_20/gpu1",
+  "failed_attempts": 40,
+  "recovery": "Repeat ALL four groups of ALL preassigned seeds 110..119 on GPU 0; separate independent processes share that GPU, never a scene",
+  "retry_cohort": "result/occluded_socket_drawer/test_20/gpu1_retry_on_gpu0",
+  "reporting": "Keep all 120 attempts in total-success denominators, including all 40 renderer failures; also report first cohort (80) and retry cohort (40) separately. Paired completion times explicitly condition on both successful physical executions."
+}

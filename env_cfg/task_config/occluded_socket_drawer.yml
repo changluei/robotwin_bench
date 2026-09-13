@@ -1,0 +1,41 @@
+# Frozen only after development validation; changes recorded in PROGRESS.md.
+instruction: 将右侧模块正确装入定位座，并把左侧抽屉关闭。
+embodiment: aloha-agilex
+dt: 0.004
+camera_hz: 10
+video_fps: 10
+budget: 35.0
+joint_velocity: 0.8
+joint_acceleration: 1.6
+cartesian_velocity: 0.12
+cartesian_acceleration: 0.3
+camera_width: 640
+camera_height: 480
+camera_fovy: 55
+socket_center: [0.18, -0.04, 0.77]
+socket_random_xy: [0.012, 0.012]
+module_half_size: [0.038, 0.032, 0.008]
+socket_inner_half_size: [0.052, 0.046]
+handle_half_size: [0.012, 0.018, 0.032]
+marker_points: [[-0.063, -0.056, 0.014], [0.063, -0.056, 0.014], [0.063, 0.056, 0.014], [-0.063, 0.056, 0.014]]
+marker_radius: 0.006
+drawer_center: [-0.26, 0.18, 0.90]
+drawer_travel: 0.24
+drawer_low: 0.0
+drawer_high: 0.22
+perception:
+  min_pixels: 10
+  min_colors: 4
+  max_geometry_error: 0.006
+  max_reprojection_error: 3.0
+  max_temporal_translation: 0.006
+  consistent_frames: 2
+evaluation:
+  position_xy: 0.015
+  position_z: 0.008
+  angle_degrees: 12
+  stable_seconds: 0.5
+  linear_speed: 0.015
+  angular_speed: 0.1
+  drawer_closed: 0.006
+  drawer_speed: 0.01

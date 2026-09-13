@@ -1,0 +1,81 @@
+{
+  "commit": "2f84b98bd64d8d1f3d8be79462b6b216b81820ff",
+  "status": "?? env_cfg/task_config/occluded_socket_drawer.yml\n?? envs/occluded_socket/\n?? envs/occluded_socket_drawer.py\n?? experiments/\n?? scripts/audit_occluded_evidence.py\n?? scripts/occluded_socket_demo.py\n?? scripts/occluded_socket_probe.py\n?? scripts/summarize_occluded_socket.py\n",
+  "source_sha256": {
+    "envs/occluded_socket_drawer.py": "2093c0f35b886a9d1e06aec53e47e7a8348cd98fc326a3769bfe21de8fbdfa16",
+    "envs/occluded_socket/__init__.py": "2b8a90a017b696ea933e7334c50b9d20e478f96ab1bd4abe5a242cdb2abb4f9d",
+    "envs/occluded_socket/controller.py": "78a6ac39bc75112b39c45e0085805f41e433eae36d6dfb6cd073184c8dccda5c",
+    "envs/occluded_socket/evaluation.py": "fadb7263c6b80ac2276de29987144c60c2fb96f363b925b6328e5991a7a1db9e",
+    "envs/occluded_socket/geometry.py": "6fc850adea8d6d92d45e241333700d5b19c193ec1fcd1f428bf7a556ecb49848",
+    "envs/occluded_socket/motion.py": "10cd13929ef0639e1f198f171d5bac28bf9985e46e314c9db0fdb184f6067621",
+    "envs/occluded_socket/observation.py": "e94a755044c5cfa6af44ae4de8688ac5989900fcbfce0cfa10adc50abf116359",
+    "envs/occluded_socket/perception.py": "79e322b88fb9aead2d3b2218eb698bb8543e564d1a4b4896e86cc79fd1a6c822",
+    "envs/occluded_socket/recording.py": "05e81732296889d9371147a36367780143d729e1fdad566c2bdce8893281a808",
+    "envs/occluded_socket/runtime.py": "fe103ad6bf736cb386e21b1786edefb9f395f5ea6b3ed137c9b5b94909434c8a",
+    "env_cfg/task_config/occluded_socket_drawer.yml": "57ebc4d86bad1ad86d5af417160762a1a505e7f03d36264b985b613e76e620ee",
+    "scripts/occluded_socket_demo.py": "9db69737077549f25c287e069719443b2f7cfaccd7fd84e2127644a3c72702aa"
+  },
+  "frozen_at_utc": "2026-09-10T06:08:47.728023+00:00",
+  "development_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "test_seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119
+  ],
+  "test_gpu_assignment": {
+    "0": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109
+    ],
+    "1": [
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119
+    ]
+  },
+  "physics_budget": 35,
+  "notes": [
+    "Baseline H/S and geometry/thresholds frozen before testing",
+    "Seven CPU contracts passed",
+    "Post-acceleration-fix quartet release_pair all successful",
+    "No tuning on held-out test outcomes"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "identical_source_snapshots": true,
+  "source_differences": [],
+  "final400_H": {
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "both_arms_moving_seconds_from_qpos_20ms": 3.84,
+    "left_motion_seconds_from_qpos_20ms": 8.82
+  },
+  "final400_S": {
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "both_arms_moving_seconds_from_qpos_20ms": 0.0,
+    "left_motion_seconds_from_qpos_20ms": 0.0
+  }
+}

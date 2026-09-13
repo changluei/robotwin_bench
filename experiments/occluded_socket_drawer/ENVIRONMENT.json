@@ -1,0 +1,24 @@
+{
+  "recorded_utc": "2026-09-10T06:38:40.422542+00:00",
+  "python": "3.10.21 (main, Aug 27 2026, 14:42:07) [GCC 14.3.0]",
+  "executable": "/mnt/sda/conda_envs/RoboTwin/bin/python",
+  "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.35",
+  "versions": {
+    "sapien": "3.0.0b1",
+    "mplib": "0.2.1",
+    "numpy": "1.26.4",
+    "opencv-python": "4.10.0.84",
+    "torch": "2.4.1",
+    "scipy": "1.10.1",
+    "imageio": "2.34.2",
+    "imageio-ffmpeg": "0.6.0",
+    "matplotlib": "3.10.9"
+  },
+  "robot_files_sha256": {
+    "assets/embodiments/aloha-agilex/config.yml": "a4f043d2d4b44cca5ec47fb498a3194da3f87ff9530dcbfdcee1539a44423d57",
+    "assets/embodiments/aloha-agilex/urdf/arx5_description_isaac.urdf": "097c59fb19a7b482249c6097df8319586ea7cfd268c015516f103b289a7e761a",
+    "assets/embodiments/aloha-agilex/srdf/arx5_description_isaac.srdf": "ee5669f617d1d4806998da3ab890bc487d0eba06692f4b5498ac3d5c5fccff66"
+  },
+  "gpu_at_final_audit": "index, name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%]\n0, NVIDIA RTX 5880 Ada Generation, 580.159.03, 49140 MiB, 16 MiB, 0 %\n1, NVIDIA RTX 5880 Ada Generation, 580.159.03, 49140 MiB, 15 MiB, 0 %\n2, NVIDIA RTX 5880 Ada Generation, 580.159.03, 49140 MiB, 15 MiB, 0 %\n3, NVIDIA RTX 5880 Ada Generation, 580.159.03, 49140 MiB, 15 MiB, 0 %\n4, NVIDIA RTX 5880 Ada Generation, 580.159.03, 49140 MiB, 15 MiB, 0 %\n5, NVIDIA RTX 5880 Ada Generation, 580.159.03, 49140 MiB, 15 MiB, 0 %\n6, NVIDIA RTX 5880 Ada Generation, 580.159.03, 49140 MiB, 15 MiB, 0 %\n7, NVIDIA RTX 5880 Ada Generation, 580.159.03, 49140 MiB, 15 MiB, 0 %\n",
+  "frozen_source_changes": []
+}

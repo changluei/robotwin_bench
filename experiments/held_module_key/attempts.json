@@ -1,0 +1,2364 @@
+[
+  {
+    "run_id": "dev400_head_a",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "head",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": false,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "RuntimeError: no_feasible_robot_path_in_bounded_candidates",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": null,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "wall_seconds": 27.317397922743112,
+    "scene_source_id": "df3135e660e2",
+    "policy_source_id": "e5ae50ef2213",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "1937f16262a1",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_b48f7c754567/df3135e660e2/dev400",
+    "canonical_policy_id": "head/e5ae50ef2213",
+    "events": []
+  },
+  {
+    "run_id": "dev400_head_b",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "head",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "no_valid_visual_key",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": 3.18,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": null,
+    "t_left_restored": null,
+    "t_right_exit": null,
+    "physics_seconds": 4.184,
+    "planning_wall_seconds": 0.4915459770709276,
+    "held_drift_gt": {
+      "samples": 210,
+      "translation_max": 0.0002771532454062253,
+      "rotation_max_degrees": 0.011350459558184329
+    },
+    "wall_seconds": 73.60756341926754,
+    "scene_source_id": "df3135e660e2",
+    "policy_source_id": "8eb1015599a4",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "1937f16262a1",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_b48f7c754567/df3135e660e2/dev400",
+    "canonical_policy_id": "head/8eb1015599a4",
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "head",
+        "candidate": {
+          "name": "head_40_p4_twist0",
+          "arm": "right",
+          "goal": [
+            [
+              -0.3001254487256878,
+              -0.09659843572736257,
+              0.9489960259359524,
+              0.14802007179611004
+            ],
+            [
+              -0.5684194104653177,
+              0.8170484171830252,
+              -0.09659843572736257,
+              -0.10905289432554917
+            ],
+            [
+              -0.7660444431189779,
+              -0.5684194104653177,
+              -0.3001254487256878,
+              0.9925671108990365
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "seconds": 1.3880000000000001,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 1.3880000000000001,
+        "event": "action_end",
+        "arm": "right",
+        "name": "observe_candidate"
+      },
+      {
+        "timestamp": 1.792,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 3.18,
+        "event": "action_end",
+        "arm": "right",
+        "name": "restore_install_holding"
+      },
+      {
+        "timestamp": 3.18,
+        "event": "recovery_complete"
+      }
+    ],
+    "jaw_range_gt": [
+      0.0002882760018110275,
+      0.0002917759120464325
+    ],
+    "max_held_linear_solver_velocity_gt": 0.1865243678487718,
+    "max_held_angular_solver_velocity_gt": 2.7011634932110207,
+    "final_key_error_gt": {
+      "position": [
+        -0.021507328612253768,
+        -0.08960979251085066,
+        0.10350642962649725
+      ],
+      "angle_degrees": 37.13584309340159
+    },
+    "final_grasp_contact_gt": true,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "dev400_head_c",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "head",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "no_valid_visual_key",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": 6.612,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": null,
+    "t_left_restored": null,
+    "t_right_exit": null,
+    "physics_seconds": 7.6160000000000005,
+    "planning_wall_seconds": 1.1320231361314654,
+    "held_drift_gt": {
+      "samples": 381,
+      "translation_max": 0.00035364984069019556,
+      "rotation_max_degrees": 0.01188393588196851
+    },
+    "wall_seconds": 35.057305549737066,
+    "scene_source_id": "a38de29f2e0d",
+    "policy_source_id": "d722aa0f061b",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "bcc39d1a5e2c",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_b48f7c754567/a38de29f2e0d/dev400",
+    "canonical_policy_id": "head/d722aa0f061b",
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "head",
+        "candidate": {
+          "name": "head_joint_3069",
+          "arm": "right",
+          "goal": [
+            [
+              -0.9641566276550293,
+              0.08094621449708939,
+              0.25268563628196716,
+              0.2831198275089264
+            ],
+            [
+              0.10487069934606552,
+              0.9910435676574707,
+              0.08267398923635483,
+              -0.2795707881450653
+            ],
+            [
+              -0.24373026192188263,
+              0.10620996356010437,
+              -0.9640098810195923,
+              1.1837337017059326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "goal_qpos": [
+            -0.08381758630275726,
+            1.1419485807418823,
+            1.4766737222671509,
+            -1.788266658782959,
+            -1.3215079307556152,
+            1.5820260047912598
+          ],
+          "seconds": 3.0979622574360115,
+          "nominal_facing_cosine": 0.26611268668758115,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 3.104,
+        "event": "action_end",
+        "arm": "right",
+        "name": "observe_candidate"
+      },
+      {
+        "timestamp": 3.508,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 6.612,
+        "event": "action_end",
+        "arm": "right",
+        "name": "restore_install_holding"
+      },
+      {
+        "timestamp": 6.612,
+        "event": "recovery_complete"
+      }
+    ],
+    "jaw_range_gt": [
+      0.0005214568227529526,
+      0.0005220379680395126
+    ],
+    "max_held_linear_solver_velocity_gt": 0.16977071898925722,
+    "max_held_angular_solver_velocity_gt": 2.310593972821596,
+    "final_key_error_gt": {
+      "position": [
+        -0.020349505673211282,
+        -0.08910676882576435,
+        0.10390668898743372
+      ],
+      "angle_degrees": 36.905788973096755
+    },
+    "final_grasp_contact_gt": true,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "dev400_head_d",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "head",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": false,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "RuntimeError: no_feasible_robot_path_in_bounded_candidates",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": null,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "wall_seconds": 26.87548005860299,
+    "scene_source_id": "a38de29f2e0d",
+    "policy_source_id": "8dbc3a7367a9",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "bcc39d1a5e2c",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_b48f7c754567/a38de29f2e0d/dev400",
+    "canonical_policy_id": "head/8dbc3a7367a9",
+    "events": []
+  },
+  {
+    "run_id": "dev400_head_e",
+    "instance_id": "held_key_49c175ea8584/development_400",
+    "config_id": "held_key_49c175ea8584",
+    "policy_id": "head",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": true,
+    "success": true,
+    "failure_reason": null,
+    "t_information": 2.6,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": 5.708,
+    "scene_source_id": "cd93a7c24ea8",
+    "policy_source_id": "06852dfcad68",
+    "diagnostic_cycle": false,
+    "candidates_from": null,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": "head",
+    "t_left_restored": null,
+    "t_right_exit": null,
+    "physics_seconds": 6.712,
+    "planning_wall_seconds": 1.1696377759799361,
+    "held_drift_gt": {
+      "samples": 336,
+      "translation_max": 0.0003185864770784974,
+      "rotation_max_degrees": 0.010623885688041257
+    },
+    "wall_seconds": 65.42490550363436,
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "59cf27ae7c85",
+    "canonical_instance_id": "held_key_49c175ea8584/cd93a7c24ea8/dev400",
+    "canonical_policy_id": "head/06852dfcad68",
+    "first_visual_translation_error_gt": 0.0012343928525812707,
+    "first_visual_rotation_error_degrees_gt": 0.3923114086575834,
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "head",
+        "candidate": {
+          "name": "head_joint_4451",
+          "arm": "right",
+          "goal": [
+            [
+              -0.9400665760040283,
+              -0.10336488485336304,
+              0.3249472975730896,
+              0.2351841926574707
+            ],
+            [
+              -0.3388940393924713,
+              0.3887397050857544,
+              -0.8567569851875305,
+              -0.323496013879776
+            ],
+            [
+              -0.03776136040687561,
+              -0.9155310988426208,
+              -0.4004708528518677,
+              1.1044719219207764
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "goal_qpos": [
+            0.35707589983940125,
+            0.8501482605934143,
+            0.9699650406837463,
+            -1.301953911781311,
+            -1.526989459991455,
+            3.1182422637939453
+          ],
+          "seconds": 3.579559373754765,
+          "nominal_facing_cosine": 0.43532604991982865,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 2.6,
+        "event": "information_ready",
+        "camera": "head",
+        "T_ee_key_estimate": [
+          [
+            -0.19619144865385293,
+            0.18662983534653182,
+            -0.9626411329301918,
+            0.17626935729899298
+          ],
+          [
+            0.5649823239381111,
+            0.82389741868096,
+            0.04458468618643813,
+            -0.00015684736374921293
+          ],
+          [
+            0.8014384003477832,
+            -0.5351281540929473,
+            -0.2670842307907091,
+            -0.0016466070575429925
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "held": true
+      },
+      {
+        "timestamp": 2.6,
+        "event": "action_cancel",
+        "arm": "right",
+        "name": "observe_candidate",
+        "reason": "information_ready"
+      },
+      {
+        "timestamp": 2.6,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 5.707999999999999,
+        "event": "action_end",
+        "arm": "right",
+        "name": "restore_install_holding"
+      },
+      {
+        "timestamp": 5.708,
+        "event": "recovery_complete"
+      }
+    ],
+    "jaw_range_gt": [
+      0.00032121501863002777,
+      0.00032047927379608154
+    ],
+    "max_held_linear_solver_velocity_gt": 0.1812499974441088,
+    "max_held_angular_solver_velocity_gt": 2.484697459343237,
+    "final_key_error_gt": {
+      "position": [
+        -0.020597431534080335,
+        -0.0892248935033517,
+        0.10389263179822472
+      ],
+      "angle_degrees": 36.94916405393234
+    },
+    "final_grasp_contact_gt": true,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "dev400_head_install_a",
+    "instance_id": "held_key_49c175ea8584/development_400",
+    "config_id": "held_key_49c175ea8584",
+    "policy_id": "head",
+    "seed": 400,
+    "mode": "install",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": true,
+    "success": true,
+    "failure_reason": null,
+    "t_information": 2.6,
+    "t_install_ready": 5.332,
+    "t_right_stable": 8.212,
+    "t_recovered": 9.736,
+    "scene_source_id": "cd93a7c24ea8",
+    "policy_source_id": "0dc3a1b51ea2",
+    "diagnostic_cycle": false,
+    "candidates_from": "result/held_module_key/dev400_head_e/candidate_plans.json",
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": "head",
+    "t_left_restored": null,
+    "t_recovered_command": 9.736,
+    "final_both_jaw_contact": false,
+    "t_right_exit": 9.735999999999999,
+    "physics_seconds": 10.74,
+    "planning_wall_seconds": 1.8340919790789485,
+    "held_drift_gt": {
+      "samples": 386,
+      "translation_max": 0.0018387155141681433,
+      "rotation_max_degrees": 1.1173100783810845
+    },
+    "wall_seconds": 18.98802611324936,
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "b79530598fe2",
+    "canonical_instance_id": "held_key_49c175ea8584/cd93a7c24ea8/dev400",
+    "canonical_policy_id": "head/0dc3a1b51ea2",
+    "first_visual_translation_error_gt": 0.0012335315247906235,
+    "first_visual_rotation_error_degrees_gt": 0.39577602934518663,
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "head",
+        "candidate": {
+          "name": "head_joint_4451",
+          "arm": "right",
+          "goal": [
+            [
+              -0.9400665760040283,
+              -0.10336488485336304,
+              0.3249472975730896,
+              0.2351841926574707
+            ],
+            [
+              -0.3388940393924713,
+              0.3887397050857544,
+              -0.8567569851875305,
+              -0.323496013879776
+            ],
+            [
+              -0.03776136040687561,
+              -0.9155310988426208,
+              -0.4004708528518677,
+              1.1044719219207764
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "goal_qpos": [
+            0.35707589983940125,
+            0.8501482605934143,
+            0.9699650406837463,
+            -1.301953911781311,
+            -1.526989459991455,
+            3.1182422637939453
+          ],
+          "seconds": 3.579559373754765,
+          "nominal_facing_cosine": 0.43532604991982865,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 2.6,
+        "event": "information_ready",
+        "camera": "head",
+        "T_ee_key_estimate": [
+          [
+            -0.19618554155384574,
+            0.18665894454211795,
+            -0.9626364558473164,
+            0.17626928115017665
+          ],
+          [
+            0.565040987961287,
+            0.8238565944135319,
+            0.04459326620004295,
+            -0.0001554756071695529
+          ],
+          [
+            0.8013983164495595,
+            -0.5351807171729788,
+            -0.26709872477409013,
+            -0.0016463768208567764
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "held": true
+      },
+      {
+        "timestamp": 2.6,
+        "event": "action_cancel",
+        "arm": "right",
+        "name": "observe_candidate",
+        "reason": "information_ready"
+      },
+      {
+        "timestamp": 2.6,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 5.332,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_preapproach"
+      },
+      {
+        "timestamp": 7.212,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_insert"
+      },
+      {
+        "timestamp": 7.712,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_release"
+      },
+      {
+        "timestamp": 9.735999999999999,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_retreat"
+      },
+      {
+        "timestamp": 9.736,
+        "event": "recovery_complete"
+      }
+    ],
+    "insertion_start_robot_audit": {
+      "timestamp": 5.332,
+      "preposition_error_xyz": [
+        -0.0017503173916064985,
+        -0.0013591096584150975,
+        0.0003486811432371617
+      ],
+      "preorientation_error_degrees": 0.2612134888395149,
+      "note": "Actual FK at insertion start; strict runtime 2 mm 3D stopped-readiness flag is kept separately, including null."
+    },
+    "jaw_range_gt": [
+      0.011238357052206993,
+      0.01223338209092617
+    ],
+    "max_held_linear_solver_velocity_gt": 0.23569586954787616,
+    "max_held_angular_solver_velocity_gt": 2.4848021750992757,
+    "final_key_error_gt": {
+      "position": [
+        0.0012785290603486987,
+        0.0008775408615150707,
+        -5.070554376374048e-08
+      ],
+      "angle_degrees": 0.6057117068086316
+    },
+    "final_grasp_contact_gt": false,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "dev400_helper_a",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "helper",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "no_valid_visual_key",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": 13.236,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": null,
+    "t_left_restored": 13.236,
+    "t_right_exit": null,
+    "physics_seconds": 14.24,
+    "planning_wall_seconds": 2.260625261347741,
+    "held_drift_gt": {
+      "samples": 713,
+      "translation_max": 0.0008594606770202518,
+      "rotation_max_degrees": 0.4033470885534266
+    },
+    "wall_seconds": 36.41918362583965,
+    "scene_source_id": "df3135e660e2",
+    "policy_source_id": "097d9b598889",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "c05f86b4a059",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_b48f7c754567/df3135e660e2/dev400",
+    "canonical_policy_id": "helper/097d9b598889",
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "helper",
+        "candidate": {
+          "name": "helper_0.08_-0.16_0.98",
+          "arm": "left",
+          "goal": [
+            [
+              0.9504901966853547,
+              -0.2879259081953669,
+              0.1169061905756445,
+              0.015080412906860019
+            ],
+            [
+              0.2857724480468737,
+              0.9576526882904225,
+              0.03514877732473415,
+              -0.2129336279146824
+            ],
+            [
+              -0.12207577131573916,
+              0.0,
+              0.9925207836905316,
+              0.9240314530522171
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "seconds": 6.416,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 6.4159999999999995,
+        "event": "action_end",
+        "arm": "left",
+        "name": "observe_candidate"
+      },
+      {
+        "timestamp": 6.82,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 6.904,
+        "event": "action_end",
+        "arm": "right",
+        "name": "restore_install_holding"
+      },
+      {
+        "timestamp": 13.236,
+        "event": "action_end",
+        "arm": "left",
+        "name": "helper_restore"
+      },
+      {
+        "timestamp": 13.236,
+        "event": "recovery_complete"
+      }
+    ],
+    "jaw_range_gt": [
+      0.0007985495030879974,
+      0.0008227769285440445
+    ],
+    "max_held_linear_solver_velocity_gt": 0.03190416685937634,
+    "max_held_angular_solver_velocity_gt": 8.181810833952053,
+    "final_key_error_gt": {
+      "position": [
+        -0.020861470216504058,
+        -0.08938148238377114,
+        0.10377245462401086
+      ],
+      "angle_degrees": 37.20213383531134
+    },
+    "final_grasp_contact_gt": true,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "dev400_helper_b",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "helper",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "no_valid_visual_key",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": 10.336,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": null,
+    "t_left_restored": 10.336,
+    "t_right_exit": null,
+    "physics_seconds": 11.34,
+    "planning_wall_seconds": 1.791843329090625,
+    "held_drift_gt": {
+      "samples": 568,
+      "translation_max": 7.42083830118645e-06,
+      "rotation_max_degrees": 0.0005491950960854053
+    },
+    "wall_seconds": 68.34009218495339,
+    "scene_source_id": "df3135e660e2",
+    "policy_source_id": "e5ae50ef2213",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "c05f86b4a059",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_b48f7c754567/df3135e660e2/dev400",
+    "canonical_policy_id": "helper/e5ae50ef2213",
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "helper",
+        "candidate": {
+          "name": "helper_-0.05_-0.27_0.9_roll180",
+          "arm": "left",
+          "goal": [
+            [
+              0.8090222661929435,
+              0.5201251138241109,
+              -0.2737751609870586,
+              -0.10548017681171878
+            ],
+            [
+              0.4926796456170006,
+              -0.8540900807113122,
+              -0.16672402593882768,
+              -0.26631963092440425
+            ],
+            [
+              -0.3205460023128362,
+              1.2213228808900542e-16,
+              -0.9472329493853447,
+              0.984008361871946
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "seconds": 4.968,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 4.968,
+        "event": "action_end",
+        "arm": "left",
+        "name": "observe_candidate"
+      },
+      {
+        "timestamp": 5.368,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 5.452,
+        "event": "action_end",
+        "arm": "right",
+        "name": "restore_install_holding"
+      },
+      {
+        "timestamp": 10.336,
+        "event": "action_end",
+        "arm": "left",
+        "name": "helper_restore"
+      },
+      {
+        "timestamp": 10.336,
+        "event": "recovery_complete"
+      }
+    ],
+    "jaw_range_gt": [
+      7.4785202741622925e-06,
+      7.441267371177673e-06
+    ],
+    "max_held_linear_solver_velocity_gt": 0.02592912762808068,
+    "max_held_angular_solver_velocity_gt": 1.8506802387144745,
+    "final_key_error_gt": {
+      "position": [
+        -0.020950409466562986,
+        -0.08932631109404124,
+        0.10374903687727621
+      ],
+      "angle_degrees": 37.02027147174523
+    },
+    "final_grasp_contact_gt": true,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "dev400_helper_c",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "helper",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": true,
+    "success": true,
+    "failure_reason": null,
+    "t_information": 4.3,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": 9.196,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": "left",
+    "t_left_restored": 9.196,
+    "t_right_exit": null,
+    "physics_seconds": 10.200000000000001,
+    "planning_wall_seconds": 1.762971586547792,
+    "held_drift_gt": {
+      "samples": 511,
+      "translation_max": 7.421391728712479e-06,
+      "rotation_max_degrees": 0.0005491950960854053
+    },
+    "wall_seconds": 18.24677839782089,
+    "scene_source_id": "df3135e660e2",
+    "policy_source_id": "e5ae50ef2213",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "1937f16262a1",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_b48f7c754567/df3135e660e2/dev400",
+    "canonical_policy_id": "helper/e5ae50ef2213",
+    "first_visual_translation_error_gt": 0.0015866387914727227,
+    "first_visual_rotation_error_degrees_gt": 0.42036517737685974,
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "helper",
+        "candidate": {
+          "name": "helper_-0.05_-0.04_0.82_roll180",
+          "arm": "left",
+          "goal": [
+            [
+              0.9312189881173725,
+              -0.3641679993491492,
+              -0.01458987387522942,
+              -0.10258361138715338
+            ],
+            [
+              -0.36412331131317327,
+              -0.9313332745317532,
+              0.0057049021281558865,
+              0.014920477938608102
+            ],
+            [
+              -0.01566557780571587,
+              1.1353068942520103e-16,
+              -0.9998772873068038,
+              0.8860886141213423
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "seconds": 5.016,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 4.3,
+        "event": "information_ready",
+        "camera": "left",
+        "T_ee_key_estimate": [
+          [
+            -0.1927434875082251,
+            0.19080594690610536,
+            -0.9625191279769324,
+            0.17681542282972573
+          ],
+          [
+            0.5650574032175355,
+            0.823529033217764,
+            0.0501008628529491,
+            0.0006310210083368406
+          ],
+          [
+            0.8022218823742258,
+            -0.5342219457273946,
+            -0.2665462055978215,
+            -0.0023222813494992167
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "held": true
+      },
+      {
+        "timestamp": 4.3,
+        "event": "action_cancel",
+        "arm": "left",
+        "name": "observe_candidate",
+        "reason": "information_ready"
+      },
+      {
+        "timestamp": 4.3,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 4.3839999999999995,
+        "event": "action_end",
+        "arm": "right",
+        "name": "restore_install_holding"
+      },
+      {
+        "timestamp": 9.196,
+        "event": "action_end",
+        "arm": "left",
+        "name": "helper_restore"
+      },
+      {
+        "timestamp": 9.196,
+        "event": "recovery_complete"
+      }
+    ],
+    "jaw_range_gt": [
+      7.463619112968445e-06,
+      7.422640919685364e-06
+    ],
+    "max_held_linear_solver_velocity_gt": 0.02584301058699862,
+    "max_held_angular_solver_velocity_gt": 1.8506979823666572,
+    "final_key_error_gt": {
+      "position": [
+        -0.020950492148388816,
+        -0.08932639197620201,
+        0.10374921601409559
+      ],
+      "angle_degrees": 37.02029319464861
+    },
+    "final_grasp_contact_gt": true,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "dev400_helper_install_a",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "helper",
+    "seed": 400,
+    "mode": "install",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": true,
+    "success": true,
+    "failure_reason": null,
+    "t_information": 4.3,
+    "t_install_ready": 5.4959999999999996,
+    "t_right_stable": 8.38,
+    "t_recovered": 9.9,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": "left",
+    "t_left_restored": 9.196,
+    "t_right_exit": 9.9,
+    "physics_seconds": 10.904,
+    "planning_wall_seconds": 2.6648002532310784,
+    "held_drift_gt": {
+      "samples": 394,
+      "translation_max": 0.0021621568594127893,
+      "rotation_max_degrees": 1.2420220309213261
+    },
+    "wall_seconds": 20.43245510617271,
+    "scene_source_id": "df3135e660e2",
+    "policy_source_id": "8eb1015599a4",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "1937f16262a1",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_b48f7c754567/df3135e660e2/dev400",
+    "canonical_policy_id": "helper/8eb1015599a4",
+    "first_visual_translation_error_gt": 0.0015866387914727227,
+    "first_visual_rotation_error_degrees_gt": 0.42036517737685974,
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "helper",
+        "candidate": {
+          "name": "helper_-0.05_-0.04_0.82_roll180",
+          "arm": "left",
+          "goal": [
+            [
+              0.9312189881173725,
+              -0.3641679993491492,
+              -0.01458987387522942,
+              -0.10258361138715338
+            ],
+            [
+              -0.36412331131317327,
+              -0.9313332745317532,
+              0.0057049021281558865,
+              0.014920477938608102
+            ],
+            [
+              -0.01566557780571587,
+              1.1353068942520103e-16,
+              -0.9998772873068038,
+              0.8860886141213423
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "seconds": 5.016,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 4.3,
+        "event": "information_ready",
+        "camera": "left",
+        "T_ee_key_estimate": [
+          [
+            -0.1927434875082251,
+            0.19080594690610536,
+            -0.9625191279769324,
+            0.17681542282972573
+          ],
+          [
+            0.5650574032175355,
+            0.823529033217764,
+            0.0501008628529491,
+            0.0006310210083368406
+          ],
+          [
+            0.8022218823742258,
+            -0.5342219457273946,
+            -0.2665462055978215,
+            -0.0023222813494992167
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "held": true
+      },
+      {
+        "timestamp": 4.3,
+        "event": "action_cancel",
+        "arm": "left",
+        "name": "observe_candidate",
+        "reason": "information_ready"
+      },
+      {
+        "timestamp": 4.3,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 5.4959999999999996,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_preapproach"
+      },
+      {
+        "timestamp": 7.3759999999999994,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_insert"
+      },
+      {
+        "timestamp": 7.8759999999999994,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_release"
+      },
+      {
+        "timestamp": 9.196,
+        "event": "action_end",
+        "arm": "left",
+        "name": "helper_restore"
+      },
+      {
+        "timestamp": 9.9,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_retreat"
+      },
+      {
+        "timestamp": 9.9,
+        "event": "recovery_complete"
+      }
+    ],
+    "insertion_start_robot_audit": {
+      "timestamp": 5.496,
+      "preposition_error_xyz": [
+        -0.0015260196756883282,
+        -0.0015571515836222266,
+        0.00029324725939350316
+      ],
+      "preorientation_error_degrees": 0.31758136218016864,
+      "note": "Actual FK at insertion start; strict runtime 2 mm 3D stopped-readiness flag is kept separately, including null."
+    },
+    "jaw_range_gt": [
+      0.010983819141983986,
+      0.01191178523004055
+    ],
+    "max_held_linear_solver_velocity_gt": 0.13750918515971702,
+    "max_held_angular_solver_velocity_gt": 1.9023037064494475,
+    "final_key_error_gt": {
+      "position": [
+        0.0015432948515226863,
+        -0.00014393581552290396,
+        9.996157679381668e-09
+      ],
+      "angle_degrees": 0.669613288786343
+    },
+    "final_grasp_contact_gt": false,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "dev400_passive_left_a",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "passive_left",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": false,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "RuntimeError: no_feasible_robot_path_in_bounded_candidates",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": null,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "wall_seconds": 3.1040268591605127,
+    "scene_source_id": "df3135e660e2",
+    "policy_source_id": "e5ae50ef2213",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "1937f16262a1",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_b48f7c754567/df3135e660e2/dev400",
+    "canonical_policy_id": "passive_left/e5ae50ef2213",
+    "events": []
+  },
+  {
+    "run_id": "dev400_passive_left_b",
+    "instance_id": "held_key_49c175ea8584/development_400",
+    "config_id": "held_key_49c175ea8584",
+    "policy_id": "passive_left",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": false,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "RuntimeError: no_feasible_robot_path_in_bounded_candidates",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_install_ready_physical": null,
+    "t_right_stable": null,
+    "t_recovered": null,
+    "scene_source_id": "cd93a7c24ea8",
+    "policy_source_id": "707c46b26e6b",
+    "diagnostic_cycle": false,
+    "candidates_from": null,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "wall_seconds": 7.097700815182179,
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "1a76cd20facb",
+    "canonical_instance_id": "held_key_49c175ea8584/cd93a7c24ea8/dev400",
+    "canonical_policy_id": "passive_left/707c46b26e6b",
+    "events": []
+  },
+  {
+    "run_id": "dev400_putdown_a",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "putdown",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": false,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "RuntimeError: no_feasible_robot_path_in_bounded_candidates",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": null,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "wall_seconds": 6.517920748796314,
+    "scene_source_id": "a38de29f2e0d",
+    "policy_source_id": "d722aa0f061b",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "bcc39d1a5e2c",
+    "diagnostic_cycle": true,
+    "canonical_instance_id": "held_key_b48f7c754567/a38de29f2e0d/dev400",
+    "canonical_policy_id": "putdown/d722aa0f061b",
+    "events": []
+  },
+  {
+    "run_id": "dev400_putdown_b",
+    "instance_id": "held_key_49c175ea8584/development_400",
+    "config_id": "held_key_49c175ea8584",
+    "policy_id": "putdown",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "no_valid_visual_key",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": null,
+    "scene_source_id": "cd93a7c24ea8",
+    "policy_source_id": "3072359ffce1",
+    "diagnostic_cycle": true,
+    "candidates_from": null,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": null,
+    "t_left_restored": null,
+    "t_right_exit": null,
+    "physics_seconds": 39.068,
+    "planning_wall_seconds": 2.6936304960399866,
+    "held_drift_gt": {
+      "samples": 126,
+      "translation_max": 0.28228020668029785,
+      "rotation_max_degrees": 107.38347691162947
+    },
+    "wall_seconds": 46.206450312864035,
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "a3939c585378",
+    "canonical_instance_id": "held_key_49c175ea8584/cd93a7c24ea8/dev400",
+    "canonical_policy_id": "putdown/3072359ffce1",
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "putdown",
+        "candidate": {
+          "name": "rack_pre",
+          "arm": "right",
+          "goal": [
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.36
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -0.16
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0,
+              1.128
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "seconds": 1.504,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 1.504,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_pre"
+      },
+      {
+        "timestamp": 2.572,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_lower"
+      },
+      {
+        "timestamp": 3.072,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_release"
+      },
+      {
+        "timestamp": 4.124,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_withdraw"
+      },
+      {
+        "timestamp": 8.032,
+        "event": "action_end",
+        "arm": "right",
+        "name": "observe_rack"
+      },
+      {
+        "timestamp": 33.912,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_pre"
+      },
+      {
+        "timestamp": 34.98,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_down"
+      },
+      {
+        "timestamp": 35.48,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_close"
+      },
+      {
+        "timestamp": 36.559999999999995,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_lift"
+      },
+      {
+        "timestamp": 36.56,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 38.064,
+        "event": "action_end",
+        "arm": "right",
+        "name": "restore_install_holding"
+      },
+      {
+        "timestamp": 38.064,
+        "event": "recovery_complete"
+      }
+    ],
+    "jaw_range_gt": [
+      0.018911277740699006,
+      0.017646330503339414
+    ],
+    "max_held_linear_solver_velocity_gt": 0.025268585963644775,
+    "max_held_angular_solver_velocity_gt": 1.8479465763049656,
+    "final_key_error_gt": {
+      "position": [
+        0.1662352303391718,
+        0.050667353514913,
+        -0.0440097276455339
+      ],
+      "angle_degrees": 108.27733058922783
+    },
+    "final_grasp_contact_gt": false,
+    "physical_recovery_verified": false,
+    "t_recovered_command": 38.064
+  },
+  {
+    "run_id": "dev400_putdown_c",
+    "instance_id": "held_key_49c175ea8584/development_400",
+    "config_id": "held_key_49c175ea8584",
+    "policy_id": "putdown",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "no_valid_visual_key",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_install_ready_physical": null,
+    "t_right_stable": null,
+    "t_recovered": 16.7,
+    "scene_source_id": "cd93a7c24ea8",
+    "policy_source_id": "8264fdeb84aa",
+    "diagnostic_cycle": true,
+    "candidates_from": null,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": null,
+    "t_left_restored": null,
+    "t_recovered_command": 16.7,
+    "final_both_jaw_contact": true,
+    "t_right_exit": null,
+    "physics_seconds": 17.704,
+    "planning_wall_seconds": 2.7189927850849926,
+    "held_drift_gt": {
+      "samples": 127,
+      "translation_max": 0.00751182297244668,
+      "rotation_max_degrees": 15.777048583125096
+    },
+    "wall_seconds": 27.26753447530791,
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "1a76cd20facb",
+    "canonical_instance_id": "held_key_49c175ea8584/cd93a7c24ea8/dev400",
+    "canonical_policy_id": "putdown/8264fdeb84aa",
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "putdown",
+        "candidate": {
+          "name": "rack_pre",
+          "arm": "right",
+          "goal": [
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.36
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -0.16
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0,
+              1.128
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "seconds": 1.504,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 1.504,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_pre"
+      },
+      {
+        "timestamp": 2.572,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_lower"
+      },
+      {
+        "timestamp": 3.072,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_release"
+      },
+      {
+        "timestamp": 4.124,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_withdraw"
+      },
+      {
+        "timestamp": 5.608,
+        "event": "action_end",
+        "arm": "right",
+        "name": "empty_withdraw_side"
+      },
+      {
+        "timestamp": 8.128,
+        "event": "action_end",
+        "arm": "right",
+        "name": "observe_rack"
+      },
+      {
+        "timestamp": 11.048,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_side"
+      },
+      {
+        "timestamp": 12.532,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_pre"
+      },
+      {
+        "timestamp": 13.616,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_down"
+      },
+      {
+        "timestamp": 14.116,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_close"
+      },
+      {
+        "timestamp": 15.196,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_lift"
+      },
+      {
+        "timestamp": 15.196,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 16.700000000000003,
+        "event": "action_end",
+        "arm": "right",
+        "name": "restore_install_holding"
+      },
+      {
+        "timestamp": 16.7,
+        "event": "recovery_complete"
+      }
+    ],
+    "jaw_range_gt": [
+      0.013961715623736382,
+      0.013476984575390816
+    ],
+    "max_held_linear_solver_velocity_gt": 0.22072715272729557,
+    "max_held_angular_solver_velocity_gt": 1.8479465763049656,
+    "final_key_error_gt": {
+      "position": [
+        -0.024860545675541967,
+        -0.08731637034639689,
+        0.11197956328355396
+      ],
+      "angle_degrees": 33.451021921730884
+    },
+    "final_grasp_contact_gt": true,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "dev400_putdown_d",
+    "instance_id": "held_key_49c175ea8584/development_400",
+    "config_id": "held_key_49c175ea8584",
+    "policy_id": "putdown",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "no_valid_visual_key",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_install_ready_physical": null,
+    "t_right_stable": null,
+    "t_recovered": 11.76,
+    "scene_source_id": "cd93a7c24ea8",
+    "policy_source_id": "14b734f15165",
+    "diagnostic_cycle": true,
+    "candidates_from": null,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": null,
+    "t_left_restored": null,
+    "t_recovered_command": 11.76,
+    "final_both_jaw_contact": true,
+    "t_right_exit": null,
+    "physics_seconds": 12.764000000000001,
+    "planning_wall_seconds": 2.6638421043753624,
+    "held_drift_gt": {
+      "samples": 127,
+      "translation_max": 0.007511871866881847,
+      "rotation_max_degrees": 15.777065246464085
+    },
+    "wall_seconds": 21.381269683130085,
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "1a76cd20facb",
+    "canonical_instance_id": "held_key_49c175ea8584/cd93a7c24ea8/dev400",
+    "canonical_policy_id": "putdown/14b734f15165",
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "putdown",
+        "candidate": {
+          "name": "rack_pre",
+          "arm": "right",
+          "goal": [
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.36
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -0.16
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0,
+              1.128
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "seconds": 1.504,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 1.504,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_pre"
+      },
+      {
+        "timestamp": 2.572,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_lower"
+      },
+      {
+        "timestamp": 3.072,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_release"
+      },
+      {
+        "timestamp": 4.124,
+        "event": "action_end",
+        "arm": "right",
+        "name": "rack_withdraw"
+      },
+      {
+        "timestamp": 5.608,
+        "event": "action_end",
+        "arm": "right",
+        "name": "empty_withdraw_side"
+      },
+      {
+        "timestamp": 5.6080000000000005,
+        "event": "planning_failure",
+        "arm": "right",
+        "name": "observe_rack",
+        "error": "known_geometry_collision: [{'a': 'fr_link3', 'b': 'fr_link5'}]"
+      },
+      {
+        "timestamp": 6.108,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_side"
+      },
+      {
+        "timestamp": 7.592,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_pre"
+      },
+      {
+        "timestamp": 8.676,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_down"
+      },
+      {
+        "timestamp": 9.176,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_close"
+      },
+      {
+        "timestamp": 10.256,
+        "event": "action_end",
+        "arm": "right",
+        "name": "regrasp_lift"
+      },
+      {
+        "timestamp": 10.256,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 11.76,
+        "event": "action_end",
+        "arm": "right",
+        "name": "restore_install_holding"
+      },
+      {
+        "timestamp": 11.76,
+        "event": "recovery_complete"
+      }
+    ],
+    "jaw_range_gt": [
+      0.013961410149931908,
+      0.013477031141519547
+    ],
+    "max_held_linear_solver_velocity_gt": 0.22067411342583323,
+    "max_held_angular_solver_velocity_gt": 1.8479465763049656,
+    "final_key_error_gt": {
+      "position": [
+        -0.02486189501493391,
+        -0.08731648770806341,
+        0.11197929240696991
+      ],
+      "angle_degrees": 33.451180210975
+    },
+    "final_grasp_contact_gt": true,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "dev400_translate_a",
+    "instance_id": "held_key_fa895f653a20/development_400",
+    "config_id": "held_key_fa895f653a20",
+    "policy_id": "hold_translate",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": false,
+    "attempt_completed": false,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "RuntimeError: initialization_grasp_lost",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": null,
+    "wall_seconds": 2.8521346361376345,
+    "scene_source_id": "bd8bddacd4c5",
+    "policy_source_id": "097d9b598889",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "ebe9d21817da",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_fa895f653a20/bd8bddacd4c5/dev400",
+    "canonical_policy_id": "hold_translate/097d9b598889",
+    "events": []
+  },
+  {
+    "run_id": "dev400_translate_b",
+    "instance_id": "held_key_fa895f653a20/development_400",
+    "config_id": "held_key_fa895f653a20",
+    "policy_id": "hold_translate",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": false,
+    "attempt_completed": false,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "RuntimeError: initialization_grasp_lost",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": null,
+    "wall_seconds": 6.5630319197662175,
+    "scene_source_id": "3926bba5916e",
+    "policy_source_id": "097d9b598889",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "c05f86b4a059",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_fa895f653a20/3926bba5916e/dev400",
+    "canonical_policy_id": "hold_translate/097d9b598889",
+    "events": []
+  },
+  {
+    "run_id": "dev400_translate_c",
+    "instance_id": "held_key_fa895f653a20/development_400",
+    "config_id": "held_key_fa895f653a20",
+    "policy_id": "hold_translate",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": false,
+    "attempt_completed": false,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "RuntimeError: initialization_grasp_lost",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": null,
+    "wall_seconds": 6.578612890094519,
+    "scene_source_id": "c0465e2db78d",
+    "policy_source_id": "097d9b598889",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "c05f86b4a059",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_fa895f653a20/c0465e2db78d/dev400",
+    "canonical_policy_id": "hold_translate/097d9b598889",
+    "events": []
+  },
+  {
+    "run_id": "dev400_translate_d",
+    "instance_id": "held_key_b48f7c754567/development_400",
+    "config_id": "held_key_b48f7c754567",
+    "policy_id": "hold_translate",
+    "seed": 400,
+    "mode": "geometry",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": false,
+    "success": false,
+    "failure_reason": "no_valid_visual_key",
+    "t_information": null,
+    "t_install_ready": null,
+    "t_right_stable": null,
+    "t_recovered": 2.06,
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": null,
+    "t_left_restored": null,
+    "t_right_exit": null,
+    "physics_seconds": 3.064,
+    "planning_wall_seconds": 0.321765030734241,
+    "held_drift_gt": {
+      "samples": 154,
+      "translation_max": 6.652965385001153e-05,
+      "rotation_max_degrees": 0.0053339568001851455
+    },
+    "wall_seconds": 11.320689793210477,
+    "scene_source_id": "df3135e660e2",
+    "policy_source_id": "097d9b598889",
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "c05f86b4a059",
+    "diagnostic_cycle": false,
+    "canonical_instance_id": "held_key_b48f7c754567/df3135e660e2/dev400",
+    "canonical_policy_id": "hold_translate/097d9b598889",
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "hold_translate",
+        "candidate": {
+          "name": "translate_3",
+          "arm": "right",
+          "goal": [
+            [
+              0.00013303759624250233,
+              0.0010420085163787007,
+              0.9999996423721313,
+              0.10997883230447769
+            ],
+            [
+              -0.00012874603271484375,
+              0.9999996423721313,
+              -0.0010418595047667623,
+              -0.1299135684967041
+            ],
+            [
+              -1.0,
+              -0.0001285076141357422,
+              0.00013315677642822266,
+              1.0998812913894653
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "seconds": 0.8280000000000001,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 0.8280000000000001,
+        "event": "action_end",
+        "arm": "right",
+        "name": "observe_candidate"
+      },
+      {
+        "timestamp": 1.232,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 2.06,
+        "event": "action_end",
+        "arm": "right",
+        "name": "restore_install_holding"
+      },
+      {
+        "timestamp": 2.06,
+        "event": "recovery_complete"
+      }
+    ],
+    "jaw_range_gt": [
+      0.00012027285993099213,
+      0.00011966004967689514
+    ],
+    "max_held_linear_solver_velocity_gt": 0.1669345296285239,
+    "max_held_angular_solver_velocity_gt": 1.8966041884145073,
+    "final_key_error_gt": {
+      "position": [
+        -0.02155891515238023,
+        -0.0895254605154657,
+        0.10360794382935001
+      ],
+      "angle_degrees": 37.13050287296098
+    },
+    "final_grasp_contact_gt": true,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "final400_H",
+    "instance_id": "held_key_49c175ea8584/development_400",
+    "config_id": "held_key_49c175ea8584",
+    "policy_id": "helper",
+    "seed": 400,
+    "mode": "install",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": true,
+    "success": true,
+    "failure_reason": null,
+    "t_information": 4.3,
+    "t_install_ready": 5.4959999999999996,
+    "t_install_ready_physical": null,
+    "t_right_stable": 8.38,
+    "t_recovered": 9.9,
+    "scene_source_id": "cd93a7c24ea8",
+    "policy_source_id": "14b734f15165",
+    "diagnostic_cycle": false,
+    "candidates_from": "result/held_module_key/dev400_helper_b/candidate_plans.json",
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": "left",
+    "t_left_restored": 9.196,
+    "t_recovered_command": 9.9,
+    "final_both_jaw_contact": false,
+    "t_right_exit": 9.9,
+    "physics_seconds": 10.904,
+    "planning_wall_seconds": 2.6951080332510173,
+    "held_drift_gt": {
+      "samples": 394,
+      "translation_max": 0.0021621568594127893,
+      "rotation_max_degrees": 1.2420220309213261
+    },
+    "wall_seconds": 21.169929320923984,
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "8e3167c11091",
+    "canonical_instance_id": "held_key_49c175ea8584/cd93a7c24ea8/dev400",
+    "canonical_policy_id": "helper/14b734f15165",
+    "first_visual_translation_error_gt": 0.0015866387914727227,
+    "first_visual_rotation_error_degrees_gt": 0.42036517737685974,
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "helper",
+        "candidate": {
+          "name": "helper_-0.05_-0.04_0.82_roll180",
+          "arm": "left",
+          "goal": [
+            [
+              0.9312189881173725,
+              -0.3641679993491492,
+              -0.01458987387522942,
+              -0.10258361138715338
+            ],
+            [
+              -0.36412331131317327,
+              -0.9313332745317532,
+              0.0057049021281558865,
+              0.014920477938608102
+            ],
+            [
+              -0.01566557780571587,
+              1.1353068942520103e-16,
+              -0.9998772873068038,
+              0.8860886141213423
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "seconds": 5.016,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 4.3,
+        "event": "information_ready",
+        "camera": "left",
+        "T_ee_key_estimate": [
+          [
+            -0.1927434875082251,
+            0.19080594690610536,
+            -0.9625191279769324,
+            0.17681542282972573
+          ],
+          [
+            0.5650574032175355,
+            0.823529033217764,
+            0.0501008628529491,
+            0.0006310210083368406
+          ],
+          [
+            0.8022218823742258,
+            -0.5342219457273946,
+            -0.2665462055978215,
+            -0.0023222813494992167
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "held": true
+      },
+      {
+        "timestamp": 4.3,
+        "event": "action_cancel",
+        "arm": "left",
+        "name": "observe_candidate",
+        "reason": "information_ready"
+      },
+      {
+        "timestamp": 4.3,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 5.4959999999999996,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_preapproach"
+      },
+      {
+        "timestamp": 7.3759999999999994,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_insert"
+      },
+      {
+        "timestamp": 7.8759999999999994,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_release"
+      },
+      {
+        "timestamp": 9.196,
+        "event": "action_end",
+        "arm": "left",
+        "name": "helper_restore"
+      },
+      {
+        "timestamp": 9.9,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_retreat"
+      },
+      {
+        "timestamp": 9.9,
+        "event": "recovery_complete"
+      }
+    ],
+    "insertion_start_robot_audit": {
+      "timestamp": 5.496,
+      "preposition_error_xyz": [
+        -0.0015260196756883282,
+        -0.0015571515836222266,
+        0.00029324725939350316
+      ],
+      "preorientation_error_degrees": 0.31758136218016864,
+      "note": "Actual FK at insertion start; strict runtime 2 mm 3D stopped-readiness flag is kept separately, including null."
+    },
+    "jaw_range_gt": [
+      0.010983819141983986,
+      0.01191178523004055
+    ],
+    "max_held_linear_solver_velocity_gt": 0.13750918515971702,
+    "max_held_angular_solver_velocity_gt": 1.9023037064494475,
+    "final_key_error_gt": {
+      "position": [
+        0.0015432948515226863,
+        -0.00014393581552290396,
+        9.996157679381668e-09
+      ],
+      "angle_degrees": 0.669613288786343
+    },
+    "final_grasp_contact_gt": false,
+    "physical_recovery_verified": true
+  },
+  {
+    "run_id": "final400_S",
+    "instance_id": "held_key_49c175ea8584/development_400",
+    "config_id": "held_key_49c175ea8584",
+    "policy_id": "head",
+    "seed": 400,
+    "mode": "install",
+    "initialized": true,
+    "attempt_completed": true,
+    "observation_valid": true,
+    "success": true,
+    "failure_reason": null,
+    "t_information": 2.6,
+    "t_install_ready": 5.332,
+    "t_install_ready_physical": null,
+    "t_right_stable": 8.212,
+    "t_recovered": 9.736,
+    "scene_source_id": "cd93a7c24ea8",
+    "policy_source_id": "14b734f15165",
+    "diagnostic_cycle": false,
+    "candidates_from": "result/held_module_key/dev400_head_e/candidate_plans.json",
+    "initial_state_sha256": "43fc0e4cf4253e87c212d3a5c826c491dc603f5394a5e37e05e95fdfedbe2f27",
+    "information_camera": "head",
+    "t_left_restored": null,
+    "t_recovered_command": 9.736,
+    "final_both_jaw_contact": false,
+    "t_right_exit": 9.735999999999999,
+    "physics_seconds": 10.74,
+    "planning_wall_seconds": 1.8446739288046956,
+    "held_drift_gt": {
+      "samples": 386,
+      "translation_max": 0.0018387155141681433,
+      "rotation_max_degrees": 1.1173100783810845
+    },
+    "wall_seconds": 19.206379380077124,
+    "perception_source_id": "19ce45ab889b",
+    "runtime_source_id": "8e3167c11091",
+    "canonical_instance_id": "held_key_49c175ea8584/cd93a7c24ea8/dev400",
+    "canonical_policy_id": "head/14b734f15165",
+    "first_visual_translation_error_gt": 0.0012335315247906235,
+    "first_visual_rotation_error_degrees_gt": 0.39577602934518663,
+    "events": [
+      {
+        "timestamp": 0.0,
+        "event": "observation_start",
+        "route": "head",
+        "candidate": {
+          "name": "head_joint_4451",
+          "arm": "right",
+          "goal": [
+            [
+              -0.9400665760040283,
+              -0.10336488485336304,
+              0.3249472975730896,
+              0.2351841926574707
+            ],
+            [
+              -0.3388940393924713,
+              0.3887397050857544,
+              -0.8567569851875305,
+              -0.323496013879776
+            ],
+            [
+              -0.03776136040687561,
+              -0.9155310988426208,
+              -0.4004708528518677,
+              1.1044719219207764
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "goal_qpos": [
+            0.35707589983940125,
+            0.8501482605934143,
+            0.9699650406837463,
+            -1.301953911781311,
+            -1.526989459991455,
+            3.1182422637939453
+          ],
+          "seconds": 3.579559373754765,
+          "nominal_facing_cosine": 0.43532604991982865,
+          "feasible": true,
+          "collisions": []
+        }
+      },
+      {
+        "timestamp": 2.6,
+        "event": "information_ready",
+        "camera": "head",
+        "T_ee_key_estimate": [
+          [
+            -0.19618554155384574,
+            0.18665894454211795,
+            -0.9626364558473164,
+            0.17626928115017665
+          ],
+          [
+            0.565040987961287,
+            0.8238565944135319,
+            0.04459326620004295,
+            -0.0001554756071695529
+          ],
+          [
+            0.8013983164495595,
+            -0.5351807171729788,
+            -0.26709872477409013,
+            -0.0016463768208567764
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "held": true
+      },
+      {
+        "timestamp": 2.6,
+        "event": "action_cancel",
+        "arm": "right",
+        "name": "observe_candidate",
+        "reason": "information_ready"
+      },
+      {
+        "timestamp": 2.6,
+        "event": "recovery_start"
+      },
+      {
+        "timestamp": 5.332,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_preapproach"
+      },
+      {
+        "timestamp": 7.212,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_insert"
+      },
+      {
+        "timestamp": 7.712,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_release"
+      },
+      {
+        "timestamp": 9.735999999999999,
+        "event": "action_end",
+        "arm": "right",
+        "name": "install_retreat"
+      },
+      {
+        "timestamp": 9.736,
+        "event": "recovery_complete"
+      }
+    ],
+    "insertion_start_robot_audit": {
+      "timestamp": 5.332,
+      "preposition_error_xyz": [
+        -0.0017503173916064985,
+        -0.0013591096584150975,
+        0.0003486811432371617
+      ],
+      "preorientation_error_degrees": 0.2612134888395149,
+      "note": "Actual FK at insertion start; strict runtime 2 mm 3D stopped-readiness flag is kept separately, including null."
+    },
+    "jaw_range_gt": [
+      0.011238357052206993,
+      0.01223338209092617
+    ],
+    "max_held_linear_solver_velocity_gt": 0.23569586954787616,
+    "max_held_angular_solver_velocity_gt": 2.4848021750992757,
+    "final_key_error_gt": {
+      "position": [
+        0.0012785290603486987,
+        0.0008775408615150707,
+        -5.070554376374048e-08
+      ],
+      "angle_degrees": 0.6057117068086316
+    },
+    "final_grasp_contact_gt": false,
+    "physical_recovery_verified": true
+  }
+]

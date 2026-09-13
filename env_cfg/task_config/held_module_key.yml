@@ -1,0 +1,34 @@
+instruction: 观察夹持模块底面的实体安装键，再将其装入固定定位座。
+dt: 0.004
+camera_hz: 10
+video_fps: 10
+budget: 45.0
+joint_velocity: 0.8
+joint_acceleration: 1.6
+cartesian_velocity: 0.12
+cartesian_acceleration: 0.3
+camera_width: 640
+camera_height: 480
+camera_fovy: 55
+socket_center: [0.20, -0.04, 0.82]
+module_half_size: [0.038, 0.032, 0.008]
+handle_half_size: [0.012, 0.018, 0.032]
+initial_module_center: [0.18, -0.13, 0.94]
+rack_center: [0.36, -0.16, 0.90]
+# Only the scene generator sees these variation ranges; no answer in policy input.
+hidden_key_xy_range: [0.008, 0.006]
+hidden_key_yaw_degrees: [-35, 35]
+key_marker_points: [[-0.010, -0.005, -0.0121], [0.010, -0.005, -0.0121], [0.010, 0.005, -0.0121], [-0.010, 0.005, -0.0121]]
+key_marker_half_size: 0.0025
+perception:
+  min_pixels: 5
+  geometry_error: 0.0025
+  temporal_translation: 0.004
+  temporal_angle_degrees: 8
+evaluation:
+  xy: 0.004
+  z: 0.003
+  angle_degrees: 6
+  stable_seconds: 0.5
+  linear_speed: 0.015
+  angular_speed: 0.1

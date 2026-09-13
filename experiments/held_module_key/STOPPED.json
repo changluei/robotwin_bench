@@ -1,0 +1,22 @@
+{
+  "status": "STOPPED_NO_DEMONSTRATED_H_LOCAL_BENEFIT",
+  "utc": "2026-09-11T09:31:54.482093+00:00",
+  "development_instances": [
+    400
+  ],
+  "final_runs": [
+    "final400_H",
+    "final400_S"
+  ],
+  "reason": "All-camera S head presentation completes right installation earlier in the paired development instance; no LOW/HIGH construction.",
+  "no_high_training_p2_or_expansion": true,
+  "source_sha256": {
+    "envs/held_module_key/__init__.py": "0f133d76a0a18cbf9868d0942f475e3522c46fb2139c45b7901b9c2a55a65d92",
+    "envs/held_module_key/scene.py": "cd93a7c24ea8577be72d50123e1567f4d6b1b8ccae7b09ec129bf09b5d9b0fca",
+    "envs/held_module_key/perception.py": "19ce45ab889b072b191856259312222a6cba5cb20e29d06d410884902393ccda",
+    "envs/held_module_key/runtime.py": "8e3167c11091a1b5c6af32bb5b1c22d4baa484b74dc26d8272210489daada6a5",
+    "envs/held_module_key/controller.py": "14b734f15165be7673e9a31e58e7498aebe6be64fd4aea16a75cea5179c63372",
+    "env_cfg/task_config/held_module_key.yml": "34e111fdfc15b05091e602640ec1d8c5cb06d65a654c467a5ede0bc91e14168c",
+    "scripts/held_module_key_demo.py": "3932e0006da56c809e624d52657f25e7dd5366dda4560d4c7ae012961a1b996e"
+  }
+}

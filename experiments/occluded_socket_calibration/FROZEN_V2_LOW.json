@@ -1,0 +1,41 @@
+{
+  "frozen_utc": "2026-09-10T12:25:04.567518+00:00",
+  "test_seeds": [
+    300,
+    301
+  ],
+  "conditions": [
+    "LOW"
+  ],
+  "routes": {
+    "H": "helper_camera_here",
+    "S": "self_small_yaw"
+  },
+  "budget": 35,
+  "development_basis": {
+    "seed": 0,
+    "H_all_seconds": 8.356,
+    "S_all_seconds": 6.568,
+    "conclusion": "H local advantage removed by feasible small held self-view; no HIGH"
+  },
+  "source_sha256": {
+    "envs/occluded_socket_drawer.py": "2093c0f35b886a9d1e06aec53e47e7a8348cd98fc326a3769bfe21de8fbdfa16",
+    "envs/occluded_socket/__init__.py": "2b8a90a017b696ea933e7334c50b9d20e478f96ab1bd4abe5a242cdb2abb4f9d",
+    "envs/occluded_socket/controller.py": "78a6ac39bc75112b39c45e0085805f41e433eae36d6dfb6cd073184c8dccda5c",
+    "envs/occluded_socket/evaluation.py": "fadb7263c6b80ac2276de29987144c60c2fb96f363b925b6328e5991a7a1db9e",
+    "envs/occluded_socket/geometry.py": "6fc850adea8d6d92d45e241333700d5b19c193ec1fcd1f428bf7a556ecb49848",
+    "envs/occluded_socket/motion.py": "10cd13929ef0639e1f198f171d5bac28bf9985e46e314c9db0fdb184f6067621",
+    "envs/occluded_socket/observation.py": "e94a755044c5cfa6af44ae4de8688ac5989900fcbfce0cfa10adc50abf116359",
+    "envs/occluded_socket/perception.py": "79e322b88fb9aead2d3b2218eb698bb8543e564d1a4b4896e86cc79fd1a6c822",
+    "envs/occluded_socket/recording.py": "05e81732296889d9371147a36367780143d729e1fdad566c2bdce8893281a808",
+    "envs/occluded_socket/runtime.py": "fe103ad6bf736cb386e21b1786edefb9f395f5ea6b3ed137c9b5b94909434c8a",
+    "envs/occluded_socket_calibration/__init__.py": "d0d5200ed8c8aece33618da72ec2326a0d3ead4ca43d5e933ccd6d4b09755887",
+    "envs/occluded_socket_calibration/audit.py": "d22d800e3fdf308a9d99613ec7e24adc0a093d28c4e2c765d1dfcf55c3643868",
+    "envs/occluded_socket_calibration/controller.py": "b062e6f6556c21b153bc3a6f6cfb29ca2dcc9a83e58ef2b4f799eb27d0625987",
+    "envs/occluded_socket_calibration/scene.py": "9a3b677a3915a1b6f6bed5e83ce2460c78738e8ae4dd19228b5c33c9eb7a068e",
+    "scripts/calibrate_occluded_socket.py": "93bc78b00f53d54a8213eb41a1078631a9623d3c94c9690ca90009fbd9334810",
+    "env_cfg/task_config/occluded_socket_drawer.yml": "57ebc4d86bad1ad86d5af417160762a1a505e7f03d36264b985b613e76e620ee",
+    "env_cfg/task_config/occluded_socket_drawer_v2_baffle.yml": "577579668499ece780ffd1ef8b2baf2f468c68031b962984a817a42017d64d24"
+  },
+  "note": "Only four new-seed LOW runs, no expansion to a 20-seed campaign. Keep all failures/initially visible cases; do not tune after observing these results."
+}

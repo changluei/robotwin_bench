@@ -1,0 +1,100 @@
+{
+  "source_run": "/home/inspur/project/RoboTwin/result/held_module_key/final400_H",
+  "mode": "offline_saved_observation_and_robot_log_audit_no_simulation",
+  "inputs_sha256": {
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_H/config.json": "124012610873600415c7ca6396d9dfbc608cd40da161546d963838139b4acf57",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_H/perception.jsonl": "14945af22296f17ac90099151a41691226d74a0a2edc4434ac6071a3015ae84b",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_H/controller.jsonl": "9aba529097bf856e0b50ff11919605303c5dea32263c81afcce7618faa91b1d7",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_H/frames/first_information/left.npz": "df7ab2fbf22e1b8b3b6d3542cacc97abe1e51c9492e06ba8f29ce49c52620ce7",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_H/frames/first_information/right.npz": "f1d4275f3e4392b789378c81113b4c23320a5fb0186594356d10280e0b32bcaf",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_H/source/envs/held_module_key/perception.py": "19ce45ab889b072b191856259312222a6cba5cb20e29d06d410884902393ccda",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_H/source/envs/occluded_socket/geometry.py": "6fc850adea8d6d92d45e241333700d5b19c193ec1fcd1f428bf7a556ecb49848"
+  },
+  "gt_files_read": [],
+  "single_frame_reconstruction": {
+    "timestamp": 4.3,
+    "camera": "left",
+    "counts": [
+      11,
+      9,
+      9,
+      9
+    ],
+    "estimate_matrix_max_error": 4.106882456333949e-08,
+    "installation_target_matrix_max_error": 4.192802760538683e-08
+  },
+  "offline_ablations": {
+    "black_rgb_produces_pose": false,
+    "zero_depth_produces_pose": false,
+    "swapped_colors_target_rotation_degrees": 180.0
+  },
+  "original_temporal_validation": [
+    {
+      "timestamp": 4.0,
+      "valid": false,
+      "reason": "incomplete_markers",
+      "counts": [
+        0,
+        0,
+        0,
+        8
+      ]
+    },
+    {
+      "timestamp": 4.1,
+      "valid": false,
+      "reason": "incomplete_markers",
+      "counts": [
+        0,
+        10,
+        0,
+        10
+      ]
+    },
+    {
+      "timestamp": 4.2,
+      "valid": false,
+      "reason": "await_consistency",
+      "counts": [
+        6,
+        11,
+        11,
+        7
+      ]
+    },
+    {
+      "timestamp": 4.3,
+      "valid": true,
+      "reason": "valid",
+      "counts": [
+        11,
+        9,
+        9,
+        9
+      ]
+    }
+  ],
+  "right_preapproach": {
+    "start_seconds": 4.3,
+    "insert_start_seconds": 5.496,
+    "actual_relative_rotation_degrees": 37.06090909667618,
+    "commanded_relative_rotation_degrees": 37.37670554736479,
+    "actual_world_relative_euler_xyz_degrees": [
+      3.050166975781939,
+      15.318911202394032,
+      -33.306835782327106
+    ],
+    "actual_translation_mm": [
+      54.08141016960144,
+      52.85835266113281,
+      9.949922561645508
+    ]
+  },
+  "limitations": [
+    "Offline single-frame reconstruction does not replay original two-frame acceptance.",
+    "Fixed socket pose, marker template and ideal camera calibration are supplied priors.",
+    "Depth is the simulator rendered optical depth, without a realistic depth-noise model.",
+    "First accepted target is frozen; no subsequent visual insertion correction.",
+    "Synthetic color ablation changes observation only and is not a physical insertion experiment."
+  ]
+}

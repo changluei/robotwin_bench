@@ -1,0 +1,18 @@
+{
+  "geometry": {
+    "attempts": 18,
+    "initialization_failures": 3,
+    "initialized": 15,
+    "protocol_completed": 10,
+    "valid_observation": 2,
+    "successful_endpoint": 2
+  },
+  "install": {
+    "attempts": 4,
+    "initialization_failures": 0,
+    "initialized": 4,
+    "protocol_completed": 4,
+    "valid_observation": 4,
+    "successful_endpoint": 4
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "source_run": "/home/inspur/project/RoboTwin/result/held_module_key/final400_S",
+  "mode": "offline_saved_observation_replay_no_simulation",
+  "inputs_sha256": {
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_S/config.json": "124012610873600415c7ca6396d9dfbc608cd40da161546d963838139b4acf57",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_S/perception.jsonl": "eb246032c17755f905eab5b2fc7acea4907ccba3202760d7ce9dc55d18a25ed1",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_S/controller.jsonl": "95cf799fbe6d51e63346ee49a4e2f2a23a7c27ae9e18df85b5db4f706285e9ec",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_S/frames/first_information/head.npz": "e3dfbf29283d5600b6ccc866fb40a37c5615f7e6b86e383573719b1c54a1de57",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_S/frames/first_information/right.npz": "4900472947b37296ff41d4b36e7999c10acdedecad6ca391cb85fd2927e05312",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_S/source/envs/held_module_key/perception.py": "19ce45ab889b072b191856259312222a6cba5cb20e29d06d410884902393ccda",
+    "/home/inspur/project/RoboTwin/result/held_module_key/final400_S/source/envs/occluded_socket/geometry.py": "6fc850adea8d6d92d45e241333700d5b19c193ec1fcd1f428bf7a556ecb49848"
+  },
+  "gt_files_read": [],
+  "timestamp": 2.6,
+  "camera": "head",
+  "measured_pixels": [
+    [
+      441.15384615384613,
+      377.61538461538464
+    ],
+    [
+      453.5,
+      395.0
+    ],
+    [
+      443.5,
+      385.0
+    ],
+    [
+      431.3636363636364,
+      367.90909090909093
+    ]
+  ],
+  "measured_counts": [
+    13,
+    12,
+    12,
+    11
+  ],
+  "geometry_error_metres": 9.768190823038485e-05,
+  "reprojection_error_pixels": 0.09756713878615542,
+  "pose_matrix_max_difference_from_recorded_estimate": 6.242446404236546e-08,
+  "installation_target_matrix_max_difference_from_recorded_command": 6.460747739578387e-08,
+  "black_rgb": {
+    "reason": "incomplete_markers",
+    "produces_pose": false
+  },
+  "zero_depth": {
+    "reason": "incomplete_markers",
+    "produces_pose": false
+  },
+  "swapped_color_correspondence": {
+    "installation_orientation_change_degrees": 180.0,
+    "synthetic_offline_input": true
+  },
+  "temporal_validation": "Single saved RGB-D frame recomputes pose only; two-frame acceptance is evidenced by original 2.5/2.6 s logs, not replayed from two saved raw frames.",
+  "public_priors": [
+    "Fixed color-to-key template coordinates",
+    "RGB-D intrinsics and camera extrinsics",
+    "Robot FK",
+    "Fixed socket frame"
+  ],
+  "limitation": "Marker-dependent ideal RGB-D pose estimation; no independent unmarked key-shape recognition or realistic depth-noise robustness demonstrated."
+}

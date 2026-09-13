@@ -1,0 +1,23 @@
+run_id,canonical_instance_id,canonical_policy_id,mode,diagnostic_cycle,initialized,attempt_completed,observation_valid,success,t_information,information_camera,t_install_ready_physical,t_install_ready,t_right_stable,t_left_restored,t_right_exit,t_recovered,failure_reason
+dev400_head_a,held_key_b48f7c754567/df3135e660e2/dev400,head/e5ae50ef2213,geometry,False,True,False,False,False,,,,,,,,,RuntimeError: no_feasible_robot_path_in_bounded_candidates
+dev400_head_b,held_key_b48f7c754567/df3135e660e2/dev400,head/8eb1015599a4,geometry,False,True,True,False,False,,,,,,,,3.18,no_valid_visual_key
+dev400_head_c,held_key_b48f7c754567/a38de29f2e0d/dev400,head/d722aa0f061b,geometry,False,True,True,False,False,,,,,,,,6.612,no_valid_visual_key
+dev400_head_d,held_key_b48f7c754567/a38de29f2e0d/dev400,head/8dbc3a7367a9,geometry,False,True,False,False,False,,,,,,,,,RuntimeError: no_feasible_robot_path_in_bounded_candidates
+dev400_head_e,held_key_49c175ea8584/cd93a7c24ea8/dev400,head/06852dfcad68,geometry,False,True,True,True,True,2.6,head,,,,,,5.708,
+dev400_head_install_a,held_key_49c175ea8584/cd93a7c24ea8/dev400,head/0dc3a1b51ea2,install,False,True,True,True,True,2.6,head,,5.332,8.212,,9.735999999999999,9.736,
+dev400_helper_a,held_key_b48f7c754567/df3135e660e2/dev400,helper/097d9b598889,geometry,False,True,True,False,False,,,,,,13.236,,13.236,no_valid_visual_key
+dev400_helper_b,held_key_b48f7c754567/df3135e660e2/dev400,helper/e5ae50ef2213,geometry,False,True,True,False,False,,,,,,10.336,,10.336,no_valid_visual_key
+dev400_helper_c,held_key_b48f7c754567/df3135e660e2/dev400,helper/e5ae50ef2213,geometry,False,True,True,True,True,4.3,left,,,,9.196,,9.196,
+dev400_helper_install_a,held_key_b48f7c754567/df3135e660e2/dev400,helper/8eb1015599a4,install,False,True,True,True,True,4.3,left,,5.4959999999999996,8.38,9.196,9.9,9.9,
+dev400_passive_left_a,held_key_b48f7c754567/df3135e660e2/dev400,passive_left/e5ae50ef2213,geometry,False,True,False,False,False,,,,,,,,,RuntimeError: no_feasible_robot_path_in_bounded_candidates
+dev400_passive_left_b,held_key_49c175ea8584/cd93a7c24ea8/dev400,passive_left/707c46b26e6b,geometry,False,True,False,False,False,,,,,,,,,RuntimeError: no_feasible_robot_path_in_bounded_candidates
+dev400_putdown_a,held_key_b48f7c754567/a38de29f2e0d/dev400,putdown/d722aa0f061b,geometry,True,True,False,False,False,,,,,,,,,RuntimeError: no_feasible_robot_path_in_bounded_candidates
+dev400_putdown_b,held_key_49c175ea8584/cd93a7c24ea8/dev400,putdown/3072359ffce1,geometry,True,True,True,False,False,,,,,,,,,no_valid_visual_key
+dev400_putdown_c,held_key_49c175ea8584/cd93a7c24ea8/dev400,putdown/8264fdeb84aa,geometry,True,True,True,False,False,,,,,,,,16.7,no_valid_visual_key
+dev400_putdown_d,held_key_49c175ea8584/cd93a7c24ea8/dev400,putdown/14b734f15165,geometry,True,True,True,False,False,,,,,,,,11.76,no_valid_visual_key
+dev400_translate_a,held_key_fa895f653a20/bd8bddacd4c5/dev400,hold_translate/097d9b598889,geometry,False,False,False,False,False,,,,,,,,,RuntimeError: initialization_grasp_lost
+dev400_translate_b,held_key_fa895f653a20/3926bba5916e/dev400,hold_translate/097d9b598889,geometry,False,False,False,False,False,,,,,,,,,RuntimeError: initialization_grasp_lost
+dev400_translate_c,held_key_fa895f653a20/c0465e2db78d/dev400,hold_translate/097d9b598889,geometry,False,False,False,False,False,,,,,,,,,RuntimeError: initialization_grasp_lost
+dev400_translate_d,held_key_b48f7c754567/df3135e660e2/dev400,hold_translate/097d9b598889,geometry,False,True,True,False,False,,,,,,,,2.06,no_valid_visual_key
+final400_H,held_key_49c175ea8584/cd93a7c24ea8/dev400,helper/14b734f15165,install,False,True,True,True,True,4.3,left,,5.4959999999999996,8.38,9.196,9.9,9.9,
+final400_S,held_key_49c175ea8584/cd93a7c24ea8/dev400,head/14b734f15165,install,False,True,True,True,True,2.6,head,,5.332,8.212,,9.735999999999999,9.736,
