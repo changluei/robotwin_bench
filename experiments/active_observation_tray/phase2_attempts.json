@@ -1,0 +1,98 @@
+[
+  {
+    "run": "phase2_dev1",
+    "seed": 0,
+    "mode": "PHASE_2_ORACLE_GEOMETRY_ONLY",
+    "success": false,
+    "sim_steps": 0,
+    "simulation_seconds": 0.0,
+    "lateral_error_gt": null,
+    "insertion_error_gt": null,
+    "eligible_for_strategy_benchmark": false,
+    "error": "ValueError: Could not load resource /tmp/tray-physics-terb8y4w/home/inspur/project/RoboTwin/assets/embodiments/aloha-agilex/urdf/aloha_maniskill_sim/meshes/base_arm.STL\nUnable to open file \"/tmp/tray-physics-terb8y4w/home/inspur/project/RoboTwin/assets/embodiments/aloha-agilex/urdf/aloha_maniskill_sim/meshes/base_arm.STL\".\nHint: the mesh directory may be wrong."
+  },
+  {
+    "run": "phase2_dev2",
+    "seed": 0,
+    "mode": "PHASE_2_ORACLE_GEOMETRY_ONLY",
+    "success": false,
+    "sim_steps": 2003,
+    "simulation_seconds": 8.012,
+    "lateral_error_gt": -0.003268313409173468,
+    "insertion_error_gt": 0.0020258458019337816,
+    "eligible_for_strategy_benchmark": false,
+    "error": null
+  },
+  {
+    "run": "phase2_dev3",
+    "seed": 0,
+    "mode": "PHASE_2_ORACLE_GEOMETRY_ONLY",
+    "success": true,
+    "sim_steps": 2004,
+    "simulation_seconds": 8.016,
+    "lateral_error_gt": -0.002347646067845238,
+    "insertion_error_gt": -0.009215715619259393,
+    "eligible_for_strategy_benchmark": false,
+    "error": null
+  },
+  {
+    "run": "phase2_holdfix_seed0",
+    "seed": 0,
+    "mode": "PHASE_2_ORACLE_GEOMETRY_ONLY",
+    "success": true,
+    "sim_steps": 2004,
+    "simulation_seconds": 8.016,
+    "lateral_error_gt": -0.002347646067845238,
+    "insertion_error_gt": -0.009215715619259393,
+    "eligible_for_strategy_benchmark": false,
+    "error": null
+  },
+  {
+    "run": "phase2_holdfix_seed1",
+    "seed": 1,
+    "mode": "PHASE_2_ORACLE_GEOMETRY_ONLY",
+    "success": true,
+    "sim_steps": 2024,
+    "simulation_seconds": 8.096,
+    "lateral_error_gt": -0.0022794119010519642,
+    "insertion_error_gt": -0.00923574945074028,
+    "eligible_for_strategy_benchmark": false,
+    "error": null
+  },
+  {
+    "run": "phase2_holdfix_seed2",
+    "seed": 2,
+    "mode": "PHASE_2_ORACLE_GEOMETRY_ONLY",
+    "success": true,
+    "sim_steps": 2205,
+    "simulation_seconds": 8.82,
+    "lateral_error_gt": -0.0012297261834756656,
+    "insertion_error_gt": -0.009841086454587741,
+    "eligible_for_strategy_benchmark": false,
+    "error": null
+  },
+  {
+    "run": "phase2_seed1",
+    "seed": 1,
+    "mode": "PHASE_2_ORACLE_GEOMETRY_ONLY",
+    "success": true,
+    "sim_steps": 2024,
+    "simulation_seconds": 8.096,
+    "lateral_error_gt": -0.0022794119010519642,
+    "insertion_error_gt": -0.00923574945074028,
+    "eligible_for_strategy_benchmark": false,
+    "error": null
+  },
+  {
+    "run": "phase2_seed2",
+    "seed": 2,
+    "mode": "PHASE_2_ORACLE_GEOMETRY_ONLY",
+    "success": false,
+    "sim_steps": 1986,
+    "simulation_seconds": 7.944,
+    "lateral_error_gt": -0.00235714702146661,
+    "insertion_error_gt": -0.009420644793557684,
+    "eligible_for_strategy_benchmark": false,
+    "error": null
+  }
+]

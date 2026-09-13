@@ -1,0 +1,11 @@
+run,seed,mode,success,sim_steps,simulation_seconds,lateral_error_gt,insertion_error_gt,eligible_for_strategy_benchmark,error
+phase2_dev1,0,PHASE_2_ORACLE_GEOMETRY_ONLY,False,0,0.0,,,False,"ValueError: Could not load resource /tmp/tray-physics-terb8y4w/home/inspur/project/RoboTwin/assets/embodiments/aloha-agilex/urdf/aloha_maniskill_sim/meshes/base_arm.STL
+Unable to open file ""/tmp/tray-physics-terb8y4w/home/inspur/project/RoboTwin/assets/embodiments/aloha-agilex/urdf/aloha_maniskill_sim/meshes/base_arm.STL"".
+Hint: the mesh directory may be wrong."
+phase2_dev2,0,PHASE_2_ORACLE_GEOMETRY_ONLY,False,2003,8.012,-0.003268313409173468,0.0020258458019337816,False,
+phase2_dev3,0,PHASE_2_ORACLE_GEOMETRY_ONLY,True,2004,8.016,-0.002347646067845238,-0.009215715619259393,False,
+phase2_holdfix_seed0,0,PHASE_2_ORACLE_GEOMETRY_ONLY,True,2004,8.016,-0.002347646067845238,-0.009215715619259393,False,
+phase2_holdfix_seed1,1,PHASE_2_ORACLE_GEOMETRY_ONLY,True,2024,8.096,-0.0022794119010519642,-0.00923574945074028,False,
+phase2_holdfix_seed2,2,PHASE_2_ORACLE_GEOMETRY_ONLY,True,2205,8.82,-0.0012297261834756656,-0.009841086454587741,False,
+phase2_seed1,1,PHASE_2_ORACLE_GEOMETRY_ONLY,True,2024,8.096,-0.0022794119010519642,-0.00923574945074028,False,
+phase2_seed2,2,PHASE_2_ORACLE_GEOMETRY_ONLY,False,1986,7.944,-0.00235714702146661,-0.009420644793557684,False,
