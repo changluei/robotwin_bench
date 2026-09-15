@@ -1,0 +1,8 @@
+[
+  {"seed": 0, "b_load": 1, "policy": "no-extra-observation", "success": false, "simulation_seconds": 13.228, "lateral_error_gt": -0.014711081117852187, "task_b_success": true},
+  {"seed": 0, "b_load": 1, "policy": "self-observation", "success": false, "simulation_seconds": 19.192, "lateral_error_gt": -0.05549296031798662, "task_b_success": true},
+  {"seed": 0, "b_load": 1, "policy": "immediate-helper", "success": true, "simulation_seconds": 24.324, "lateral_error_gt": -0.004057011648454539, "task_b_success": true},
+  {"seed": 0, "b_load": 1, "policy": "helper-after-current-B-step", "success": false, "simulation_seconds": 26.476, "lateral_error_gt": -0.0011184855072010058, "task_b_success": false},
+  {"seed": 0, "b_load": 1, "policy": "pre-observation", "success": true, "simulation_seconds": 25.688, "lateral_error_gt": -0.0029757923442106926, "task_b_success": true},
+  {"seed": 0, "b_load": 1, "policy": "helper-motion-without-helper-image", "success": false, "simulation_seconds": 24.324, "lateral_error_gt": -0.012852302522393472, "task_b_success": true}
+]

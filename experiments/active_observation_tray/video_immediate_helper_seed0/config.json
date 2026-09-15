@@ -1,0 +1,105 @@
+{
+  "dt": 0.004,
+  "joint_velocity": 0.8,
+  "joint_acceleration": 1.6,
+  "cartesian_velocity": 0.12,
+  "cartesian_acceleration": 0.3,
+  "rack_center": [
+    -0.18,
+    0.12,
+    0.8
+  ],
+  "tray_start": [
+    -0.18,
+    -0.25,
+    0.79
+  ],
+  "tray_half_width": 0.045,
+  "peg_offset": [
+    0.0,
+    0.2,
+    0.014
+  ],
+  "peg_half": [
+    0.005,
+    0.012,
+    0.006
+  ],
+  "slot_half_width": 0.011,
+  "lateral_range": 0.014,
+  "rack_xy_range": 0.002,
+  "tray_xy_range": 0.002,
+  "image_width": 640,
+  "image_height": 480,
+  "rt_samples_per_pixel": 8,
+  "rt_bounces": 3,
+  "marker_min_pixels": 12,
+  "marker_max_pixels": 1000,
+  "max_rgb_correction": 0.025,
+  "final_insertion_distance": 0.065,
+  "max_stability_seconds": 2.0,
+  "helper_camera_position": [
+    0.16,
+    -0.1,
+    1.02
+  ],
+  "self_view_offset": [
+    -0.04,
+    0.02,
+    0.23
+  ],
+  "b_block_starts": [
+    [
+      0.08,
+      -0.2,
+      0.76
+    ],
+    [
+      0.14,
+      -0.2,
+      0.76
+    ],
+    [
+      0.2,
+      -0.2,
+      0.76
+    ],
+    [
+      0.26,
+      -0.2,
+      0.76
+    ],
+    [
+      0.32,
+      -0.2,
+      0.76
+    ]
+  ],
+  "b_block_goals": [
+    [
+      0.08,
+      0.05,
+      0.76
+    ],
+    [
+      0.14,
+      0.05,
+      0.76
+    ],
+    [
+      0.2,
+      0.05,
+      0.76
+    ],
+    [
+      0.26,
+      0.05,
+      0.76
+    ],
+    [
+      0.32,
+      0.05,
+      0.76
+    ]
+  ]
+}

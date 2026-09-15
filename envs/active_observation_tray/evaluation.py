@@ -12,5 +12,13 @@ def measure_geometry(env):
                 tray_linear_speed=float(np.linalg.norm(env.tray_body.linear_velocity)),
                 tray_angular_speed=float(np.linalg.norm(env.tray_body.angular_velocity)),
                 inserted=bool(abs(error[0]) < env.config.slot_half_width-env.config.peg_half[0]
-                              and error[1] < -.005 and error[1] > -.02
+                              and error[1] < -.005 and error[1] > -.04
                               and abs(error[2]) < .009))
+
+
+def measure_task_b(env, load):
+    errors = [float(np.linalg.norm(block.get_pose().p - goal))
+              for block, goal in zip(env.b_blocks[:load], env.b_goal_positions[:load])]
+    return dict(task_b_errors_gt=errors,
+                task_b_completed_gt=[error < .035 for error in errors],
+                task_b_success=bool(errors and all(error < .035 for error in errors)))

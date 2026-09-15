@@ -18,6 +18,14 @@ class TrayScene:
         self._temporary_robot = None
         systems = [sapien.physx.PhysxCpuSystem()]
         if not physics_only:
+            # The default raster pipeline deadlocks on H100/H200 during camera
+            # readback. This is RoboTwin's established, working render path.
+            sapien.render.set_camera_shader_dir('rt')
+            sapien.render.set_ray_tracing_samples_per_pixel(config.rt_samples_per_pixel)
+            # This setting is the number of RT light bounces; it does not
+            # create or expose a range/depth observation.
+            sapien.render.set_ray_tracing_path_depth(config.rt_bounces)
+            sapien.render.set_ray_tracing_denoiser('oidn')
             systems.append(sapien.render.RenderSystem())
         self.scene = sapien.Scene(systems)
         self.scene.set_timestep(config.dt)
@@ -113,16 +121,29 @@ class TrayScene:
         self.box(b, [0, 0, .020], [.06, .008, .004], [.6, .6, .6])
         self.box(b, [0, 0, -.020], [.06, .008, .004], [.6, .6, .6])
         # Local marks are attached to the aperture itself, inside rack.
-        for x in [-.015, .015]:
-            self.box(b, [x, -.0082, .009], [.004, .0002, .004], [1, .02, .02], False)
+        for x in [-.022, .022]:
+            for z in [.010, .035]:
+                self.box(b, [x, -.0082, z], [.0045, .0003, .0045],
+                         [1, .02, .02], False)
         b.initial_pose = sapien.Pose(self.hole_xyz)
         self.slot = b.build_static('slot')
         b = self.scene.create_actor_builder()
         self.box(b, [0, .08, 0], [c.tray_half_width, .10, .007], [.1, .3, .4])
         self.box(b, [0, 0, .04], [.012, .018, .032], [.85, .55, .15])
-        self.box(b, c.peg_offset, c.peg_half, [.1, .9, .2])
+        self.box(b, c.peg_offset, c.peg_half, [.55, .58, .55])
+        # Four uniquely colored coplanar fiducials make correspondence and
+        # pose observable from RGB alone. They are visual-only geometry, not
+        # a segmentation or simulator-state channel.
+        tray_marks = [
+            ((-.030, .125, .0073), (.02, 1., .08)),   # green
+            ((-.030, .175, .0073), (1., .25, .01)),   # orange
+            (( .030, .125, .0073), (1., .02, 1.)),    # magenta
+            (( .030, .175, .0073), (1., 1., .02)),    # yellow
+        ]
+        for position, color in tray_marks:
+            self.box(b, position, [.007, .007, .0003], color, False)
         # A narrow neck connects the peg physically to the distal tray edge.
-        self.box(b, [0, .182, .009], [.004, .012, .009], [.1, .3, .4])
+        self.box(b, [0, .182, .009], [.003, .006, .005], [.1, .3, .4])
         b.initial_pose = sapien.Pose(self.tray_initial)
         self.tray = b.build('tray')
         self.tray_body = self.tray.find_component_by_type(sapien.physx.PhysxRigidDynamicComponent)
@@ -132,8 +153,28 @@ class TrayScene:
         self.box(b, np.array(c.tray_start) + [0, .07, -.026], [.07, .10, .019], [.4, .37, .3])
         self.source = b.build_static('tray_source_support')
 
+        # Public Task-B geometry. The right arm must physically move the first
+        # N blocks; actor poses remain evaluator-only.
+        self.b_blocks = []
+        self.b_goal_positions = []
+        for index, (start, goal) in enumerate(zip(c.b_block_starts, c.b_block_goals)):
+            b = self.scene.create_actor_builder()
+            self.box(b, [0, 0, 0], [.018, .018, .018], [.12, .25, .9])
+            b.initial_pose = sapien.Pose(start)
+            block = b.build(f'b_block_{index}')
+            block.find_component_by_type(sapien.physx.PhysxRigidDynamicComponent).set_mass(.04)
+            self.b_blocks.append(block)
+            self.b_goal_positions.append(np.asarray(goal, dtype=float))
+            if not self.physics_only:
+                marker = self.scene.create_actor_builder()
+                self.box(marker, np.asarray(goal) + [0, 0, -.0185],
+                         [.025, .025, .0005], [.15, .15, .35], False)
+                marker.build_static(f'b_goal_{index}')
+
     def load_camera(self):
-        self.cameras = {name: self.scene.add_camera(name, 640, 480, np.deg2rad(55), .015, 5)
+        self.cameras = {name: self.scene.add_camera(name, self.config.image_width,
+                                                    self.config.image_height,
+                                                    np.deg2rad(55), .015, 5)
                         for name in ['left', 'right', 'head', 'overview']}
         self.cameras['head'].entity.set_pose(sapien.Pose(look_at(np.array([-.032, -.45, 1.35]), [0, 0, .78])))
         self.cameras['overview'].entity.set_pose(sapien.Pose(look_at(np.array([.8, -.9, 1.35]), [-.1, 0, .8])))

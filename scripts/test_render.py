@@ -1,6 +1,7 @@
 import sys
 import warnings
 import os
+import time
 
 warnings.simplefilter(action="ignore", category=FutureWarning)
 warnings.simplefilter(action="ignore", category=UserWarning)
@@ -53,6 +54,30 @@ class Sapien_TEST(gym.Env):
         # declare sapien scene
         scene_config = sapien.SceneConfig()
         self.scene = self.engine.create_scene(scene_config)
+
+        # A renderer-only check misses H100/H200 readback deadlocks. Exercise
+        # the complete camera path used by data collection instead.
+        self.scene.add_ground(0)
+        self.scene.set_ambient_light([0.5, 0.5, 0.5])
+        camera = self.scene.add_camera("readback_test", 64, 64, 1.0, 0.01, 10)
+        camera.set_pose(sapien.Pose([0, 0, 1]))
+        self.scene.update_render()
+
+        start = time.monotonic()
+        camera.take_picture()
+        take_seconds = time.monotonic() - start
+        start = time.monotonic()
+        color = camera.get_picture("Color")
+        cpu_seconds = time.monotonic() - start
+        start = time.monotonic()
+        color_cuda = camera.get_picture_cuda("Color")
+        cuda_seconds = time.monotonic() - start
+        assert color.shape == (64, 64, 4)
+        assert list(color_cuda.shape) == [64, 64, 4]
+        print(
+            f"Camera readback OK: take={take_seconds:.3f}s, "
+            f"CPU={cpu_seconds:.3f}s, CUDA={cuda_seconds:.3f}s"
+        )
 
 
 if __name__ == "__main__":

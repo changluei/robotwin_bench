@@ -1,74 +1,34 @@
-# Repository inspection — 2026-09-14
+# 实现检查记录 — 2026-09-15
 
-## Scope and reusable code
+## 数据边界
 
-- `envs/_base_task.py`: task lifecycle (`setup_demo`, `load_actors`, `play_once`,
-  `check_success`), SAPIEN scene creation, default 250 Hz physics, observation
-  collection and action dispatch. `move` aligns action lists; its blocking
-  execution is unsuitable for interruption at arbitrary B progress.
-- `envs/pick_dual_bottles.py`, `place_dual_shoes.py`, `stack_blocks_two.py`:
-  paired arm actions, grasp/lift/place patterns, procedural blocks.
-- `envs/robot/robot.py`: existing Aloha URDF, arm joint groups, drive gains,
-  gripper joints, wrist links, FK and planning interface. Reuse this embodiment.
-- `envs/camera/camera.py`: both wrists remain enabled; `update_wrist_camera`
-  follows robot links, `get_rgb` reads Color, depth is scalar optical depth
-  from negative camera Position z. Calibration includes intrinsics/extrinsics.
-- `envs/utils/actor_utils.py`: `get_functional_point` and `get_contact_point`
-  multiply local geometry by exact actor pose. Consequently `grasp_actor` and
-  `place_actor` are oracle helpers, unsuitable for the tested visual controller.
-- `envs/occluded_socket/motion.py`: robot-only FK/IK, quintic joint motion,
-  C2 Cartesian interpolation, common velocity/acceleration limits, drive update
-  without a hidden physics step. Reuse with a local collision-world adapter.
-- `envs/occluded_socket/observation.py`, `geometry.py`: RGB + scalar depth
-  allow-list, wrist extrinsics from FK and the fixed URDF mounting transform.
-  Reuse for the visual phase, after rendering works.
-- Existing independent experiments under `envs/held_module_key` and
-  `envs/occluded_socket` establish a local package + scripts + experiments/results
-  convention. They are historical experiments, not evidence for this task.
+`vision.py` 定义策略唯一可见的 `RGBFrame`：name、timestamp、RGB、intrinsic 和
+`T_world_camera`。采集只请求 SAPIEN `Color` attachment。控制器源码没有访问
+`hole_xyz`、actor `get_pose()`、Position attachment、segmentation 或 seed。
 
-No applicable AGENTS.md was found. Existing tracked files were clean at start.
-No core changes are needed. New code belongs in `envs/active_observation_tray`,
-with its own CLI and result directories.
+slot 使用四个红色标记；tray 使用四个颜色各异的小标记。后者避免同色平面 PnP
+的对应歧义，并通过最小/最大连通域面积排除托盘表面、机械臂和 Task-B 方块。
+helper 画面中四点均为真实 RT 渲染像素，不是投影生成的假检测。
 
-## Scene and information boundary
+`evaluation.py` 是独立的 privileged 边界，只在控制动作完成后读取 tray、hole 和
+block pose。`test_contracts.py` 通过 AST/源码检查禁止视觉策略读取上述字段。
 
-Use procedural collision boxes for a wide shelf and an actual open slot,
-plus a dynamic tray with a front handle and one distal peg. The rack provides
-broad floor support without close lateral rails. Table coordinates use +world-y
-for insertion and world-x for lateral correction (the requested task-local y).
-Slot and peg marks will be on the internal mating geometry itself.
+## 物理和调度
 
-Phase 2 is explicitly oracle-only. It must execute pick, partial insertion,
-lateral correction and final insertion through physical joint drives, with
-no object teleport or attachment after initialization. Oracle results are not
-baseline results and cannot demonstrate a sensing trade-off.
+- 左臂：抓取 → 抬升 → 部分插入 → RGB 横向修正 → 固定距离最终插入 → 稳定检查。
+- 右臂：逐块 hover/pick/close/lift/place/open/retreat；1/3/5 是同一队列的前缀。
+- 每个 tick 先写左、右驱动和重力补偿，再执行恰好一次共享 `scene.step()`。
+- helper 暂停 B，保存右臂关节状态，移动观察、采 RGB、返回，再恢复未完成阶段。
+- tray 和 blocks 仅靠 PhysX 接触及夹爪摩擦运动；初始化后不设置物体 pose。
 
-The future visual controller must receive only robot state, calibrated frames,
-known nominal geometry and image-derived estimates. The evaluator owns actor
-poses, true peg/slot error and contact logs. Self/helper acquisition must feed
-one common insertion controller. Historical estimates must be propagated with
-robot motion when self-observation moves the held tray.
+本机默认 raster shader 在 camera readback 上死锁，所以场景在创建 RenderSystem
+前选择 `rt` shader。光线反弹设置只影响渲染质量，不进入观测张量。
 
-## Phase gates
+## 已发现的真实限制
 
-1. Inspect repository and verify environment.
-2. Physically validate minimal geometry with explicitly labelled oracle input.
-3. Validate real wrist visibility and RGB-D estimates; save frames, detections
-   and evaluation-only GT projections. Do not replace rendering with synthetic
-   point projections or fabricated detections.
-4. Validate independent self-observation trajectory.
-5. Validate helper trajectory with the same controller.
-6. Add B and independent per-arm queues, driven before ONE shared scene.step.
-7. Paired seeds, image ablation, pre-observation, CSV/JSON and measured ranking.
+左腕相机相对夹爪固定，tray 相对夹爪也由抓取固定，因此移动左臂不能改变
+“相机—tray”遮挡关系。真实 self frame 中托盘覆盖目标区域，四个 slot 标记不可见。
+该策略保留为有效失败样本；helper view 则能同时看到 slot 与 tray 标记。
 
-## Environment finding
-
-Installed Python: `/mnt/sda/conda_envs/RoboTwin/bin/python`; SAPIEN 3.0.0b1,
-MPLib 0.2.1, OpenCV 4.10.0. Both sandbox and escalated `nvidia-smi` fail.
-`/sys/module/nvidia`, `/proc/driver/nvidia/version`, `/dev/dri` are absent.
-Minimal SAPIEN RenderSystem creation also fails both inside and outside the
-sandbox: `vk::PhysicalDevice::createDeviceUnique: ErrorExtensionNotPresent`.
-The installed Vulkan software ICD does not provide the extensions required by
-this SAPIEN build. CPU PhysX can be attempted for Phase 2 only; it cannot provide
-the required real wrist image evidence. Do not proceed past the visual gate
-without restoring the rendering environment.
+延迟 helper 可能在返回路径上扰动已经放好的 B 方块。这不是计时公式惩罚，而是
+实际接触后最终位置误差，结果文件会按最终状态记录。

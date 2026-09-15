@@ -38,7 +38,14 @@ class occluded_socket_drawer(Base_Task):
         # CPU PhysX plus one explicit rendering GPU. No cuRobo allocation.
         # 3.0.0b1 has no offscreen_only keyword; no Viewer is created headless.
         sapien.render.set_global_config(max_num_materials=5000, max_num_textures=5000)
-        sapien.render.set_camera_shader_dir('default')
+        # SAPIEN 3.0.0b1's default raster pipeline deadlocks during both CPU
+        # and CUDA camera readback on H100/H200 with recent NVIDIA drivers.
+        # RoboTwin's established RT pipeline uses a different synchronization
+        # path and has working get_picture/get_picture_cuda readback here.
+        sapien.render.set_camera_shader_dir('rt')
+        sapien.render.set_ray_tracing_samples_per_pixel(32)
+        sapien.render.set_ray_tracing_path_depth(8)
+        sapien.render.set_ray_tracing_denoiser('oidn')
         self.engine = sapien.Engine()
         self.renderer = sapien.SapienRenderer()
         self.scene = sapien.Scene([sapien.physx.PhysxCpuSystem(), sapien.render.RenderSystem(device=f'cuda:{self.gpu}')])

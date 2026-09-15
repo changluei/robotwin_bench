@@ -1,67 +1,78 @@
-# Tray active observation — 当前为 Phase 2，尚未完成 demo
+# Active-observation tray experiment
 
-截至 2026-09-14，已完成仓库检查和 CPU PhysX 的最小几何 oracle 调试。
-**没有完成真实视觉闭环、Task B、四种策略或 ranking reversal 验证。**
-当前机器 NVIDIA 驱动不可用，SAPIEN 创建渲染设备报
-`vk::PhysicalDevice::createDeviceUnique: ErrorExtensionNotPresent`；沙箱外复查结果相同。
-因此按照用户指定顺序停在 Phase 3 的真实相机验证入口，不能以 oracle 代替视觉。
+这是一个可运行的双臂主动观察实验。左臂抓住托盘，将远端 peg 插入有随机横向
+偏移的 slot；右臂同时搬运 1/3/5 个方块（Task B），也可以暂时中断搬运去提供
+helper view。策略比较的核心是：观察能提高 Task A 成功率，但自观察、辅助观察、
+等待时机和中断 Task B 都有真实的物理时间与干扰成本。
 
-详见 [仓库检查](INSPECTION.md)、[实际结果与限制](REPORT.md)。
+## 观测约束
 
-## 当前可运行命令
+测试策略是 **RGB only**：相机适配器只调用 `get_picture('Color')`，输出 RGB、
+内参、外参和时间戳。没有读取 Position 图、距离图、分割图、actor pose、随机
+seed 或 hole/tray 真值。红色 slot 标记和托盘上的绿/橙/品红/黄色标记都是普通
+渲染几何；位姿由 HSV 连通域和 calibrated monocular PnP 得到。
 
-```sh
-cd /home/inspur/project/RoboTwin
-PY=/mnt/sda/conda_envs/RoboTwin/bin/python
+`set_ray_tracing_path_depth(...)` 是 SAPIEN 的光线路径反弹次数设置，仅用于避开
+本机默认 raster readback 死锁；它不是传感器的深度数据。
 
-# 真实渲染检查；当前环境预期非零退出，并保存明确错误。
-$PY scripts/active_observation_tray_demo.py probe --output result/active_observation_tray/my_render_probe
+真值只在 episode 结束后的 `evaluation.py` 中计算成功率、末端误差和 Task-B
+方块误差，不会反馈给控制器。`oracle` 命令仍保留为明确标注的几何调试入口，
+不能计入策略 benchmark。
 
-# Phase 2：无渲染的真实机器人、接触和轨迹调试。明确允许 GT，仅用于几何。
-$PY scripts/active_observation_tray_demo.py oracle --physics-only --seed 0 --output result/active_observation_tray/my_geometry_0
+## 六种策略
 
-# GPU 环境恢复后，同一几何可保存所有腕部/头部/overview 的实际图像。
-# 仍是 oracle 调试，不是 self/helper 策略。
-$PY scripts/active_observation_tray_demo.py oracle --seed 0 --output result/active_observation_tray/my_rendered_geometry_0
+| policy | 行为 |
+|---|---|
+| `no-extra-observation` | 只用正常腕部画面；看不到目标时执行零修正 |
+| `self-observation` | 左臂带托盘移动后使用自己的腕部相机 |
+| `immediate-helper` | 右臂立即暂停 B，移动到 helper viewpoint 并采一帧 RGB |
+| `helper-after-current-B-step` | 等右臂完成当前方块后再提供 helper RGB |
+| `pre-observation` | 抓取前先由 helper 观察 slot，之后用公开 grasp/FK 传播 peg |
+| `helper-motion-without-helper-image` | 执行同样 helper 运动但丢弃图像，用于隔离运动成本 |
 
-# 汇总现有记录，包含失败；不运行仿真，不构造策略结果。
-$PY experiments/active_observation_tray/summarize_phase2.py result/active_observation_tray --output experiments/active_observation_tray
+所有机械臂目标在一次 `scene.step()` 前共同写入；没有为两臂分别推进仿真时间。
+episode 内不瞬移物体、不附着 tray，也不按策略修改动力学参数。
+
+## 运行
+
+```bash
+cd /home/cuidi/workspace/code/robotwin_bench
+PY=/mnt/data/users/cuidi/envs/robotwin_bench/bin/python
+
+# 只验证真实 Color readback
+$PY scripts/active_observation_tray_demo.py probe \
+  --output /tmp/active_tray_probe
+
+# 单 episode
+$PY scripts/active_observation_tray_demo.py episode \
+  --policy immediate-helper --b-load 5 --seed 0 \
+  --video --output /tmp/active_tray_episode
+
+# 配对实验；每个 seed × load 都运行全部六种策略
+$PY scripts/active_observation_tray_demo.py batch \
+  --seeds 100:120 --b-loads 1,3,5 \
+  --output result/active_observation_tray/rgb_benchmark
 ```
 
-每个仿真输出目录必须尚不存在。退出码 0 表示本条验证成功，1 表示失败。
-`oracle` 的 `eligible_for_strategy_benchmark` 始终为 false。
+输出目录必须预先不存在。单次结果在 `result.json`，并保存实际采集的 PNG；加
+`--video` 会生成带仿真时间和动作标签的 `overview.mp4`。该 overview 只用于结果
+展示，绝不会输入控制器。batch
+持续写入完整 `results.json` 和扁平的 `results.csv`，即使某条策略失败也会保留。
 
-## 已新增文件和关键代码
+## 已验证范围
 
-- `envs/active_observation_tray/configs.py`：几何、初始平移扰动和统一运动上限。
-- `scene.py`：桌面、宽支撑面、真实开槽、带 handle/peg 的动态 tray；拥有真值。
-- `motion.py`：复用原有限速 FK/IK/轨迹生成，移除旧实验的无关规划障碍。
-- `debug_oracle.py`：真实抓取与插入动作、动作边界、物理步计时、源码快照。
-- `evaluation.py`：独立计算真值误差和插入判定。
-- `scripts/active_observation_tray_demo.py`：渲染探针和 Phase 2 命令。
-- 本目录：检查、报告和由真实结果生成的 CSV/JSON。
+- RT Color readback：通过，64×64×4；CPU 和 CUDA readback 均不再卡死。
+- `immediate-helper, seed=0, b_load=1`：Task A/B 成功。
+- `pre-observation, seed=0, b_load=1`：Task A/B 成功。
+- `immediate-helper, seed=0, b_load=5`：Task A 成功，5 个 B 方块全部成功；
+  最终方块中心误差为 3.1–6.4 mm，仿真时间 69.004 s。
+- 当前 Aloha 左腕相机被所持托盘固定遮挡，已实际保存 self 图像并记录为无效观察；
+  这是该 embodiment 的实验结果，不用合成检测或真值把它改成成功。
 
-运行时核心路径是 `kin.drive(...) → kin.compensate() → scene.step()`。
-只有初始机械臂配置调用一次 `set_qpos`；之后没有物体 pose 设置、焊接约束、
-运动瞬移或按策略修改 physics。时间等于实际物理步数 × 0.004 秒。
-抓取通过两个手指的物理接触维持，tray 会有真实偏转与滑动。
+最终代码的 seed-0/B=1 六策略结果见 [CSV](smoke_seed0_b1.csv) 和
+[JSON](smoke_seed0_b1.json)。这些是 smoke tests，不是 20-seed 统计结论；正式
+排名应运行上面的 batch 命令。
 
-CPU 调试的 URDF 临时副本只移除 visual 元素以避免初始化渲染器；保留碰撞、
-质量/关节结构和 camera mounting links。由于现有 `Robot` 的 cuRobo 模块导入
-会初始化 CUDA，CPU 模式用同一 URDF/配置直接建立驱动；有渲染模式继续使用
-原 `Robot` 类。该差异不被隐藏，也不能据此宣称已验证视觉版的一致性。
-
-## 后续必须完成的内容
-
-1. 恢复当前内核可用的 GPU 驱动/设备访问，先通过 `probe`。
-2. 使用真实 RGB-D 验证 normal、self 和 helper 视角；根据实际可见性决定
-   是否需要 rack 局部遮挡结构。目前场景只验证支撑与 slot，尚未调视觉遮挡。
-3. 实现传统视觉与统一插入控制器，移除 debug oracle 的目标输入；历史观测
-   根据 FK 补偿托盘跟随左腕运动，记录接触滑移误差。
-4. 依次跑通 self/helper，再加入右臂 1/3/5 块搬运与共享物理时间线。
-5. 才提供 `no-extra-observation`、`self-observation`、`immediate-helper`、
-   `helper-after-current-B-step`、`pre-observation` 和
-   `helper-motion-without-helper-image` 的执行入口及配对 benchmark。
-
-目前这些策略**没有可运行命令**；没有添加会误导用户的空策略或假 benchmark。
-不能从当前 oracle 的 3 个成功实例推断辅助观察价值。
+一条 `immediate-helper, seed=0, B=1` 的加速 overview 示例保存在
+[overview.mp4](video_immediate_helper_seed0/overview.mp4)，对应 helper 原始 RGB
+帧为 [helper_step_2873.png](video_immediate_helper_seed0/helper_step_2873.png)。
